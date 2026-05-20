@@ -4,18 +4,18 @@ import { Mail, Phone, MapPin, Linkedin, Twitter, Facebook } from 'lucide-react'
 export default function Footer() {
   return (
     <footer className="bg-slate-950 text-gray-300 border-t border-accent-cyan/20">
-      <div className="max-w-7xl mx-auto px-4 py-16">
+      <div className="max-w-7xl mx-auto px-4 py-12 sm:py-16">
         {/* Main Footer Content */}
-        <div className="grid md:grid-cols-5 gap-8 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
           {/* Company Info */}
           <div>
             <div className="flex items-center gap-2 mb-4">
               <div className="w-8 h-8 bg-gradient-to-br from-accent-green to-accent-cyan rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold">⚡</span>
               </div>
-              <h3 className="text-lg font-bold text-white">NextGen</h3>
+              <h3 className="text-base sm:text-lg font-bold text-white">NextGen</h3>
             </div>
-            <p className="text-sm text-gray-400 mb-4">
+            <p className="text-xs sm:text-sm text-gray-400 mb-4">
               India's premier lithium-ion battery manufacturing platform powering sustainable mobility.
             </p>
             {/* Compliance Badges */}
@@ -80,47 +80,47 @@ export default function Footer() {
         </div>
 
         {/* Contact Info */}
-        <div className="grid md:grid-cols-3 gap-6 mb-12 pb-12 border-b border-slate-800">
-          <div className="flex gap-3">
-            <Phone size={20} className="text-accent-green flex-shrink-0 mt-0.5" />
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12 pb-8 sm:pb-12 border-b border-slate-800">
+          <div className="flex gap-3 items-start">
+            <Phone size={18} className="text-accent-green flex-shrink-0 mt-0.5" />
             <div>
               <p className="text-sm text-gray-400">Phone</p>
-              <p className="text-white">+91 9876 543 210</p>
+              <p className="text-white text-sm sm:text-base">+91 9876 543 210</p>
             </div>
           </div>
-          <div className="flex gap-3">
-            <Mail size={20} className="text-accent-cyan flex-shrink-0 mt-0.5" />
+          <div className="flex gap-3 items-start">
+            <Mail size={18} className="text-accent-cyan flex-shrink-0 mt-0.5" />
             <div>
               <p className="text-sm text-gray-400">Email</p>
-              <p className="text-white">contact@nextgen.in</p>
+              <p className="text-white text-sm sm:text-base">contact@nextgen.in</p>
             </div>
           </div>
-          <div className="flex gap-3">
-            <MapPin size={20} className="text-accent-green flex-shrink-0 mt-0.5" />
+          <div className="flex gap-3 items-start">
+            <MapPin size={18} className="text-accent-green flex-shrink-0 mt-0.5" />
             <div>
               <p className="text-sm text-gray-400">Headquarters</p>
-              <p className="text-white">Ghaziabad, India</p>
+              <p className="text-white text-sm sm:text-base">Ghaziabad, India</p>
             </div>
           </div>
         </div>
 
         {/* Bottom Footer */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-gray-500">&copy; 2026 NextGen Energy. All rights reserved.</p>
-          <div className="flex gap-4">
-            <a href="#" className="text-gray-400 hover:text-accent-green transition">
-              <Linkedin size={20} />
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left">
+          <p className="text-xs sm:text-sm text-gray-500 order-3 sm:order-1">&copy; 2026 NextGen Energy. All rights reserved.</p>
+          <div className="flex gap-4 order-1 sm:order-2">
+            <a href="#" className="text-gray-400 hover:text-accent-green transition p-1">
+              <Linkedin size={18} />
             </a>
-            <a href="#" className="text-gray-400 hover:text-accent-cyan transition">
-              <Twitter size={20} />
+            <a href="#" className="text-gray-400 hover:text-accent-cyan transition p-1">
+              <Twitter size={18} />
             </a>
-            <a href="#" className="text-gray-400 hover:text-accent-green transition">
-              <Facebook size={20} />
+            <a href="#" className="text-gray-400 hover:text-accent-green transition p-1">
+              <Facebook size={18} />
             </a>
           </div>
-          <div className="flex gap-6 text-sm">
-            <a href="#" className="text-gray-500 hover:text-gray-300 transition">Privacy Policy</a>
-            <a href="#" className="text-gray-500 hover:text-gray-300 transition">Terms of Service</a>
+          <div className="flex gap-4 sm:gap-6 text-xs sm:text-sm order-2 sm:order-3">
+            <Link to="/privacy-policy" className="text-gray-500 hover:text-gray-300 transition">Privacy Policy</Link>
+            <Link to="/terms-and-conditions" className="text-gray-500 hover:text-gray-300 transition">Terms</Link>
           </div>
         </div>
       </div>

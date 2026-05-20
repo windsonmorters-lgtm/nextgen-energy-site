@@ -86,52 +86,52 @@ export default function Home() {
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="relative h-[90vh] bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 overflow-hidden flex items-center">
+      <section className="relative min-h-[90vh] bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 overflow-hidden flex items-center px-4 py-20">
         {/* Animated background elements */}
-        <div className="absolute inset-0 opacity-20">
+        <div className="absolute inset-0 opacity-20 pointer-events-none">
           <motion.div
             animate={{ rotate: 360 }}
             transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-            className="absolute top-1/2 left-1/2 w-96 h-96 bg-accent-cyan rounded-full filter blur-3xl"
+            className="absolute top-1/2 left-1/2 w-64 h-64 md:w-96 md:h-96 bg-accent-cyan rounded-full filter blur-3xl -translate-x-1/2 -translate-y-1/2"
           />
           <motion.div
             animate={{ rotate: -360 }}
             transition={{ duration: 25, repeat: Infinity, ease: 'linear' }}
-            className="absolute top-1/3 right-1/4 w-96 h-96 bg-accent-green rounded-full filter blur-3xl"
+            className="absolute top-1/3 right-1/4 w-48 h-48 md:w-96 md:h-96 bg-accent-green rounded-full filter blur-3xl"
           />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 w-full">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight">
               Powering India's Circular
-              <br />
+              <br className="hidden sm:block" />
               <span className="bg-gradient-to-r from-accent-green via-accent-cyan to-accent-green bg-clip-text text-transparent">
                 Lithium Energy Platform
               </span>
             </h1>
-            <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-8 sm:mb-12 max-w-2xl mx-auto px-2 sm:px-0">
               Advanced battery manufacturing with full-cycle recycling and sustainable mobility solutions
             </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
               <Link
                 to="/products"
-                className="px-8 py-4 bg-gradient-to-r from-accent-green to-accent-cyan text-slate-950 font-bold rounded-lg hover:shadow-2xl hover:shadow-accent-green/50 transition flex items-center justify-center gap-2 group"
+                className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-accent-green to-accent-cyan text-slate-950 font-bold rounded-lg hover:shadow-2xl hover:shadow-accent-green/50 transition flex items-center justify-center gap-2 group text-sm sm:text-base"
               >
                 Explore EV Battery Packs
-                <ArrowRight size={20} className="group-hover:translate-x-1 transition" />
+                <ArrowRight size={18} className="group-hover:translate-x-1 transition" />
               </Link>
               <Link
                 to="/contact"
-                className="px-8 py-4 border-2 border-accent-cyan text-accent-cyan font-bold rounded-lg hover:bg-accent-cyan/10 transition flex items-center justify-center gap-2"
+                className="px-6 sm:px-8 py-3 sm:py-4 border-2 border-accent-cyan text-accent-cyan font-bold rounded-lg hover:bg-accent-cyan/10 transition flex items-center justify-center gap-2 text-sm sm:text-base"
               >
                 Partner With Us
-                <ArrowRight size={20} />
+                <ArrowRight size={18} />
               </Link>
             </div>
           </motion.div>
@@ -141,8 +141,8 @@ export default function Home() {
       {/* Infrastructure & Impact Counters */}
       <section className="py-20 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-16 text-slate-950">Our Infrastructure & Impact</h2>
-          <div className="grid md:grid-cols-4 gap-8">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-12 md:mb-16 text-slate-950 px-4">Our Infrastructure & Impact</h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
             {[
               { label: 'Sq. Ft. Facility', value: counts.facility, suffix: 'K', icon: BarChart3 },
               { label: 'Packs/Month Capacity', value: counts.capacity, suffix: '+', icon: Zap },
@@ -153,14 +153,14 @@ export default function Home() {
                 key={idx}
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                className="p-8 bg-white rounded-xl shadow-lg border border-accent-cyan/20 hover:border-accent-green/50 transition text-center"
+                className="p-4 sm:p-6 md:p-8 bg-white rounded-xl shadow-lg border border-accent-cyan/20 hover:border-accent-green/50 transition text-center"
               >
-                <item.icon className="w-12 h-12 mx-auto mb-4 text-accent-green" />
-                <div className="text-4xl font-bold text-slate-950 mb-2">
+                <item.icon className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 mx-auto mb-2 sm:mb-3 md:mb-4 text-accent-green" />
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-950 mb-1 sm:mb-2">
                   {item.value}
                   <span className="text-accent-cyan">{item.suffix}</span>
                 </div>
-                <p className="text-gray-600">{item.label}</p>
+                <p className="text-gray-600 text-xs sm:text-sm md:text-base">{item.label}</p>
               </motion.div>
             ))}
           </div>
@@ -170,11 +170,11 @@ export default function Home() {
       {/* Product Showcase Section */}
       <section className="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-4">Introducing Next-Gen Electric Scooter Battery Range</h2>
-          <p className="text-center text-gray-400 mb-12 max-w-2xl mx-auto">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-3 sm:mb-4 px-4">Introducing Next-Gen Electric Scooter Battery Range</h2>
+          <p className="text-center text-gray-400 mb-8 sm:mb-12 max-w-2xl mx-auto px-4 text-sm sm:text-base">
             High-performance lithium batteries designed for every EV application
           </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {products.map((product, idx) => (
               <motion.div
                 key={idx}
@@ -186,9 +186,9 @@ export default function Home() {
                 <div className="h-48 bg-gradient-to-br from-accent-green/20 to-accent-cyan/20 flex items-center justify-center">
                   <Zap className="w-20 h-20 text-accent-green/60" />
                 </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-white mb-3">{product.name}</h3>
-                  <div className="grid grid-cols-3 gap-3 mb-4 text-sm">
+                <div className="p-4 sm:p-6">
+                  <h3 className="text-lg sm:text-xl font-bold text-white mb-3">{product.name}</h3>
+                  <div className="grid grid-cols-3 gap-2 sm:gap-3 mb-4 text-xs sm:text-sm">
                     <div className="text-center p-2 bg-slate-700 rounded">
                       <p className="text-accent-cyan font-bold">{product.voltage}</p>
                       <p className="text-gray-400 text-xs">Voltage</p>
@@ -205,13 +205,13 @@ export default function Home() {
                   <div className="flex gap-2">
                     <Link
                       to="/contact"
-                      className="flex-1 px-4 py-2 bg-accent-green text-slate-950 font-bold rounded-lg text-center hover:bg-accent-green/80 transition text-sm"
+                      className="flex-1 px-3 sm:px-4 py-2.5 sm:py-2 bg-accent-green text-slate-950 font-bold rounded-lg text-center hover:bg-accent-green/80 transition text-xs sm:text-sm"
                     >
                       Enquire Now
                     </Link>
                     <Link
                       to="/products"
-                      className="flex-1 px-4 py-2 border border-accent-cyan text-accent-cyan font-bold rounded-lg text-center hover:bg-accent-cyan/10 transition text-sm"
+                      className="flex-1 px-3 sm:px-4 py-2.5 sm:py-2 border border-accent-cyan text-accent-cyan font-bold rounded-lg text-center hover:bg-accent-cyan/10 transition text-xs sm:text-sm"
                     >
                       More Details
                     </Link>
@@ -226,20 +226,20 @@ export default function Home() {
       {/* Our Core Strengths Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-16 text-slate-950">Our Core Strengths</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-12 md:mb-16 text-slate-950 px-4">Our Core Strengths</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
             {coreStrengths.map((strength, idx) => (
               <motion.div
                 key={idx}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: idx * 0.1 }}
-                className="p-8 bg-gradient-to-br from-slate-50 to-white rounded-xl border-2 border-slate-200 hover:border-accent-green/50 transition text-center group"
+                className="p-6 sm:p-8 bg-gradient-to-br from-slate-50 to-white rounded-xl border-2 border-slate-200 hover:border-accent-green/50 transition text-center group"
               >
-                <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-accent-green to-accent-cyan rounded-full flex items-center justify-center group-hover:scale-110 transition">
-                  <strength.icon className="w-8 h-8 text-white" />
+                <div className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-4 sm:mb-6 bg-gradient-to-br from-accent-green to-accent-cyan rounded-full flex items-center justify-center group-hover:scale-110 transition">
+                  <strength.icon className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-slate-950 mb-3">{strength.title}</h3>
+                <h3 className="text-lg sm:text-xl font-bold text-slate-950 mb-2 sm:mb-3">{strength.title}</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">{strength.description}</p>
               </motion.div>
             ))}
@@ -250,28 +250,28 @@ export default function Home() {
       {/* Testimonials Section */}
       <section className="py-20 bg-gradient-to-br from-slate-50 to-white">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-4 text-slate-950">Words Of Our Clients</h2>
-          <p className="text-center text-gray-600 mb-16 max-w-2xl mx-auto">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-3 sm:mb-4 text-slate-950 px-4">Words Of Our Clients</h2>
+          <p className="text-center text-gray-600 mb-8 sm:mb-12 md:mb-16 max-w-2xl mx-auto px-4 text-sm sm:text-base">
             What our customers say about their experience with NextGen Energy batteries
           </p>
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
             {testimonials.map((testimonial, idx) => (
               <motion.div
                 key={idx}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: idx * 0.1 }}
-                className="p-8 bg-white rounded-xl shadow-lg border border-slate-200 hover:shadow-xl transition"
+                className="p-5 sm:p-6 md:p-8 bg-white rounded-xl shadow-lg border border-slate-200 hover:shadow-xl transition"
               >
-                <Quote className="w-10 h-10 text-accent-green/30 mb-4" />
-                <p className="text-gray-700 mb-6 leading-relaxed">{testimonial.text}</p>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-accent-green to-accent-cyan rounded-full flex items-center justify-center text-white font-bold">
+                <Quote className="w-8 h-8 sm:w-10 sm:h-10 text-accent-green/30 mb-3 sm:mb-4" />
+                <p className="text-gray-700 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">{testimonial.text}</p>
+                <div className="flex items-center gap-3 sm:gap-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-accent-green to-accent-cyan rounded-full flex items-center justify-center text-white font-bold text-sm sm:text-base">
                     {testimonial.name.charAt(0)}
                   </div>
                   <div>
-                    <h4 className="font-bold text-slate-950">{testimonial.name}</h4>
-                    <p className="text-sm text-gray-500">{testimonial.role}</p>
+                    <h4 className="font-bold text-slate-950 text-sm sm:text-base">{testimonial.name}</h4>
+                    <p className="text-xs sm:text-sm text-gray-500">{testimonial.role}</p>
                   </div>
                 </div>
               </motion.div>
@@ -285,70 +285,70 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex items-center gap-3 mb-4">
             <Newspaper className="w-8 h-8 text-accent-green" />
-            <h2 className="text-4xl font-bold">Media Coverage & Press Releases</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">Media Coverage & Press Releases</h2>
           </div>
-          <p className="text-gray-400 mb-12 max-w-2xl">
+          <p className="text-gray-400 mb-8 sm:mb-12 max-w-2xl text-sm sm:text-base">
             Stay updated with our latest innovations, product launches, and company achievements
           </p>
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
             {pressReleases.map((press, idx) => (
               <motion.div
                 key={idx}
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ delay: idx * 0.1 }}
-                className="p-6 bg-slate-800 rounded-xl border border-slate-700 hover:border-accent-green/50 transition group cursor-pointer"
+                className="p-4 sm:p-6 bg-slate-800 rounded-xl border border-slate-700 hover:border-accent-green/50 transition group cursor-pointer"
               >
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-accent-green/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <FileText className="w-6 h-6 text-accent-green" />
+                <div className="flex items-start gap-3 sm:gap-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-accent-green/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <FileText className="w-5 h-5 sm:w-6 sm:h-6 text-accent-green" />
                   </div>
-                  <div className="flex-1">
-                    <span className="inline-block px-3 py-1 bg-accent-cyan/20 text-accent-cyan text-xs rounded-full mb-2">
+                  <div className="flex-1 min-w-0">
+                    <span className="inline-block px-2 sm:px-3 py-1 bg-accent-cyan/20 text-accent-cyan text-xs rounded-full mb-2">
                       {press.category}
                     </span>
-                    <h3 className="text-lg font-bold text-white mb-2 group-hover:text-accent-green transition">
+                    <h3 className="text-base sm:text-lg font-bold text-white mb-2 group-hover:text-accent-green transition line-clamp-2">
                       {press.title}
                     </h3>
-                    <p className="text-sm text-gray-400">{press.date}</p>
+                    <p className="text-xs sm:text-sm text-gray-400">{press.date}</p>
                   </div>
                 </div>
               </motion.div>
             ))}
           </div>
-          <div className="text-center mt-10">
+          <div className="text-center mt-8 sm:mt-10">
             <Link
               to="/blog"
-              className="inline-flex items-center gap-2 px-6 py-3 border border-accent-cyan text-accent-cyan font-bold rounded-lg hover:bg-accent-cyan/10 transition"
+              className="inline-flex items-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 border border-accent-cyan text-accent-cyan font-bold rounded-lg hover:bg-accent-cyan/10 transition text-sm sm:text-base"
             >
               View All Press Releases
-              <ArrowRight size={20} />
+              <ArrowRight size={18} />
             </Link>
           </div>
         </div>
       </section>
 
       {/* Business Segments */}
-      <section className="py-20 bg-white">
+      <section className="py-16 sm:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-16 text-slate-950">Our Business Segments</h2>
-          <div className="grid md:grid-cols-3 gap-8">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-12 md:mb-16 text-slate-950 px-4">Our Business Segments</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
             {businessSegments.map((segment, idx) => (
               <motion.div
                 key={idx}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                whileHover={{ y: -8 }}
-                className="p-8 bg-gradient-to-br from-slate-50 to-white rounded-xl border-2 border-slate-200 hover:border-accent-green/50 transition"
+                whileHover={{ y: -4 }}
+                className="p-5 sm:p-6 md:p-8 bg-gradient-to-br from-slate-50 to-white rounded-xl border-2 border-slate-200 hover:border-accent-green/50 transition"
               >
-                <div className="text-5xl mb-4">{segment.icon}</div>
-                <h3 className="text-2xl font-bold text-slate-950 mb-3">{segment.title}</h3>
-                <p className="text-gray-600 mb-6">{segment.description}</p>
+                <div className="text-4xl sm:text-5xl mb-3 sm:mb-4">{segment.icon}</div>
+                <h3 className="text-xl sm:text-2xl font-bold text-slate-950 mb-2 sm:mb-3">{segment.title}</h3>
+                <p className="text-gray-600 text-sm sm:text-base mb-4 sm:mb-6">{segment.description}</p>
                 <div className="space-y-2">
                   {segment.products.map((product, pidx) => (
                     <div key={pidx} className="flex items-center gap-2 text-accent-green">
-                      <span className="text-lg">→</span>
-                      <span className="text-sm">{product}</span>
+                      <span className="text-base sm:text-lg">→</span>
+                      <span className="text-sm sm:text-base">{product}</span>
                     </div>
                   ))}
                 </div>
@@ -359,15 +359,15 @@ export default function Home() {
       </section>
 
       {/* Circular Ecosystem */}
-      <section className="py-20 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white">
+      <section className="py-16 sm:py-20 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-4">Circular Battery Ecosystem</h2>
-          <p className="text-center text-gray-400 mb-16 max-w-2xl mx-auto">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-3 sm:mb-4 px-4">Circular Battery Ecosystem</h2>
+          <p className="text-center text-gray-400 mb-10 sm:mb-16 max-w-2xl mx-auto px-4 text-sm sm:text-base">
             Full-lifecycle battery management from sourcing to recycling
           </p>
           
           {/* Timeline */}
-          <div className="grid md:grid-cols-6 gap-4 mb-12">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3 sm:gap-4 mb-12">
             {ecosystemPhases.map((item, idx) => (
               <motion.div
                 key={idx}
@@ -376,10 +376,10 @@ export default function Home() {
                 transition={{ delay: idx * 0.1 }}
                 className="relative"
               >
-                <div className={`p-6 rounded-lg bg-gradient-to-br ${item.color} to-transparent border border-white/20 text-center hover:border-accent-green/50 transition`}>
-                  <div className="text-3xl font-bold mb-2">{idx + 1}</div>
-                  <h4 className="font-bold mb-2">{item.phase}</h4>
-                  <p className="text-xs text-gray-200">{item.description}</p>
+                <div className={`p-4 sm:p-6 rounded-lg bg-gradient-to-br ${item.color} to-transparent border border-white/20 text-center hover:border-accent-green/50 transition`}>
+                  <div className="text-2xl sm:text-3xl font-bold mb-1 sm:mb-2">{idx + 1}</div>
+                  <h4 className="font-bold mb-1 sm:mb-2 text-sm sm:text-base">{item.phase}</h4>
+                  <p className="text-xs text-gray-200 hidden sm:block">{item.description}</p>
                 </div>
                 {idx < ecosystemPhases.length - 1 && (
                   <div className="absolute top-1/2 -right-2 w-4 h-0.5 bg-gradient-to-r from-accent-green to-transparent hidden md:block" />
@@ -389,16 +389,16 @@ export default function Home() {
           </div>
 
           {/* Description */}
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
             >
-              <h3 className="text-2xl font-bold mb-4 text-accent-green">Phase 1: Processing & Recovery</h3>
-              <p className="text-gray-300 mb-4">
+              <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-accent-green">Phase 1: Processing & Recovery</h3>
+              <p className="text-gray-300 mb-4 text-sm sm:text-base">
                 Crushing and mechanical separation processes extract valuable materials. Our advanced black mass processing technology recovers lithium, cobalt, and manganese with 95%+ efficiency.
               </p>
-              <ul className="space-y-2 text-gray-400">
+              <ul className="space-y-2 text-gray-400 text-sm sm:text-base">
                 <li>✓ Crushing & Mechanical Separation</li>
                 <li>✓ Black Mass Processing</li>
                 <li>✓ Material Sorting & Classification</li>
@@ -408,11 +408,11 @@ export default function Home() {
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
             >
-              <h3 className="text-2xl font-bold mb-4 text-accent-cyan">Phase 2: Refining & Extraction</h3>
-              <p className="text-gray-300 mb-4">
+              <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-accent-cyan">Phase 2: Refining & Extraction</h3>
+              <p className="text-gray-300 mb-4 text-sm sm:text-base">
                 Advanced chemical refining extracts pure lithium, cobalt, and manganese for reuse in new battery production, creating a true circular economy.
               </p>
-              <ul className="space-y-2 text-gray-400">
+              <ul className="space-y-2 text-gray-400 text-sm sm:text-base">
                 <li>✓ Chemical Refining & Leaching</li>
                 <li>✓ Core Mineral Extraction</li>
                 <li>✓ Battery-Grade Material Production</li>
@@ -423,15 +423,15 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-accent-green to-accent-cyan">
+      <section className="py-16 sm:py-20 bg-gradient-to-r from-accent-green to-accent-cyan">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold text-slate-950 mb-6">Ready to Transform Your Energy?</h2>
-          <p className="text-lg text-slate-900 mb-8">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-950 mb-4 sm:mb-6">Ready to Transform Your Energy?</h2>
+          <p className="text-base sm:text-lg text-slate-900 mb-6 sm:mb-8">
             Partner with NextGen — India's leading lithium battery manufacturer
           </p>
           <Link
             to="/contact"
-            className="inline-block px-8 py-4 bg-slate-950 text-accent-green font-bold rounded-lg hover:shadow-2xl hover:shadow-slate-950/50 transition"
+            className="inline-block px-6 sm:px-8 py-3 sm:py-4 bg-slate-950 text-accent-green font-bold rounded-lg hover:shadow-2xl hover:shadow-slate-950/50 transition text-sm sm:text-base"
           >
             Get Started Today
           </Link>
