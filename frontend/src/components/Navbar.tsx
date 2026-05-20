@@ -6,9 +6,11 @@ import { motion, AnimatePresence } from 'framer-motion'
 // Main navigation items - flat structure, no dropdowns
 const mainLinks = [
   { label: 'Products', path: '/products', icon: '🔋' },
+  { label: 'Appliance', path: '/appliance', icon: '📺' },
+  { label: 'Spare Parts', path: '/spare-parts', icon: '🔧' },
+  { label: 'E-Services', path: '/e-services', icon: '💻' },
   { label: 'Solutions', path: '/solutions', icon: '⚡' },
   { label: 'About', path: '/about', icon: '🏢' },
-  { label: 'Media', path: '/blog', icon: '📰' },
   { label: 'Careers', path: '/career', icon: '💼' },
   { label: 'Support', path: '/customer-support', icon: '🎧' },
 ]
