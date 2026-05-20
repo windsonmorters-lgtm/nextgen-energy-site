@@ -9,6 +9,12 @@ import About from './pages/About'
 import Blog from './pages/Blog'
 import Contact from './pages/Contact'
 import Solutions from './pages/Solutions'
+import CustomerSupport from './pages/CustomerSupport'
+import Gallery from './pages/Gallery'
+import Career from './pages/Career'
+import OurPresence from './pages/OurPresence'
+import PrivacyPolicy from './pages/PrivacyPolicy'
+import TermsConditions from './pages/TermsConditions'
 
 function App() {
   return (
@@ -24,6 +30,12 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/solutions" element={<Solutions />} />
+            <Route path="/customer-support" element={<CustomerSupport />} />
+            <Route path="/gallery" element={<Gallery />} />
+            <Route path="/career" element={<Career />} />
+            <Route path="/our-presence" element={<OurPresence />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-and-conditions" element={<TermsConditions />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>

@@ -25,6 +25,15 @@ const menuItems = [
     ],
   },
   {
+    label: 'Media',
+    path: '/blog',
+    submenu: [
+      { label: 'News & Press', path: '/blog' },
+      { label: 'Gallery', path: '/gallery' },
+      { label: 'Career', path: '/career' },
+    ],
+  },
+  {
     label: 'Sustainability',
     path: '/sustainability',
     submenu: [
@@ -116,7 +125,13 @@ export default function Navbar() {
               to="/blog"
               className={`transition ${isActive('/blog') ? 'text-accent-green' : 'text-gray-200 hover:text-accent-green'}`}
             >
-              News
+              Media
+            </Link>
+            <Link
+              to="/our-presence"
+              className={`transition ${isActive('/our-presence') ? 'text-accent-green' : 'text-gray-200 hover:text-accent-green'}`}
+            >
+              Our Presence
             </Link>
           </div>
 
