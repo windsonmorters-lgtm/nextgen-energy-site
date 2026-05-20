@@ -25,10 +25,10 @@ export default function Navbar() {
     <div className="fixed top-0 w-full z-50">
       {/* Top Bar - Logo, Search, Contact */}
       <nav className="bg-slate-950 border-b border-slate-800">
-        <div className="max-w-7xl mx-auto px-2 sm:px-4">
+        <div className="max-w-7xl mx-auto pr-4 pl-0">
           <div className="flex items-center justify-between h-16 gap-4">
-            {/* Logo - Placed more to the left */}
-            <Link to="/" className="flex items-center gap-3 flex-shrink-0 -ml-2 sm:ml-0">
+            {/* Logo - Extreme left position */}
+            <Link to="/" className="flex items-center gap-3 flex-shrink-0 -ml-4">
               <img 
                 src="/logoo.png" 
                 alt="NAXEN EXIM INDIA" 
