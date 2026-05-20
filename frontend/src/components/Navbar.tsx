@@ -79,21 +79,21 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* Navigation Bar - Flat Style (No Dropdowns) */}
+      {/* Navigation Bar - Enhanced Visibility */}
       <nav className="hidden lg:block bg-slate-900 border-b border-slate-800">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="flex items-center h-12 gap-1">
+          <div className="flex items-center justify-center h-14 gap-2">
             {mainLinks.map((link) => (
               <Link
                 key={link.label}
                 to={link.path}
-                className={`flex items-center gap-1.5 px-4 py-2 rounded-lg transition font-medium text-sm ${
+                className={`flex items-center gap-2 px-5 py-2.5 rounded-xl transition-all duration-200 font-semibold text-base tracking-wide ${
                   isActive(link.path) 
-                    ? 'bg-accent-green/20 text-accent-green' 
-                    : 'text-gray-300 hover:bg-slate-800 hover:text-white'
+                    ? 'bg-gradient-to-r from-accent-green to-accent-cyan text-slate-950 shadow-lg shadow-accent-green/30 scale-105' 
+                    : 'text-gray-200 hover:bg-slate-800 hover:text-white hover:scale-105'
                 }`}
               >
-                <span>{link.icon}</span>
+                <span className="text-lg">{link.icon}</span>
                 <span>{link.label}</span>
               </Link>
             ))}
@@ -124,15 +124,19 @@ export default function Navbar() {
 
             {/* Mobile Navigation Links */}
             <div className="p-4">
-              <p className="text-xs text-gray-500 uppercase font-semibold mb-3">Menu</p>
+              <p className="text-xs text-gray-500 uppercase font-semibold mb-4">Menu</p>
               {mainLinks.map((link) => (
                 <Link
                   key={link.label}
                   to={link.path}
                   onClick={() => setIsOpen(false)}
-                  className="flex items-center gap-2 text-white font-medium py-2 hover:text-accent-green transition"
+                  className={`flex items-center gap-3 text-lg font-semibold py-3 px-3 rounded-xl transition-all ${
+                    isActive(link.path)
+                      ? 'bg-gradient-to-r from-accent-green to-accent-cyan text-slate-950'
+                      : 'text-white hover:bg-slate-800 hover:text-accent-green'
+                  }`}
                 >
-                  <span className="text-lg">{link.icon}</span>
+                  <span className="text-xl">{link.icon}</span>
                   {link.label}
                 </Link>
               ))}
