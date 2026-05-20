@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { ArrowRight, Zap, BarChart3, Globe, Leaf, ChevronLeft, ChevronRight, Quote, Award, Shield, Users, Microscope, FileText, Newspaper } from 'lucide-react'
-import { useEffect, useState, useRef } from 'react'
+import { ArrowRight, Zap, BarChart3, Globe, Leaf, Quote, Award, Shield, Users, Microscope, FileText, Newspaper } from 'lucide-react'
+import { useEffect, useState } from 'react'
 
 export default function Home() {
   const [counts, setCounts] = useState({ facility: 0, capacity: 0, pincodes: 0, partners: 0 })
