@@ -6,9 +6,9 @@ export default function TermsConditions() {
     {
       icon: FileText,
       title: 'Acceptance of Terms',
-      content: `By accessing or using the NextGen Energy website, products, or services, you agree to be bound by these Terms and Conditions. If you do not agree to these terms, please do not use our website or services.
+      content: `By accessing or using the Naxen Exim India Energy website, products, or services, you agree to be bound by these Terms and Conditions. If you do not agree to these terms, please do not use our website or services.
 
-      These Terms constitute a legally binding agreement between you and NextGen Energy Industries Limited regarding your use of our website and services.`
+      These Terms constitute a legally binding agreement between you and Naxen Exim India Energy Industries Limited regarding your use of our website and services.`
     },
     {
       icon: Scale,
@@ -25,7 +25,7 @@ export default function TermsConditions() {
     {
       icon: Gavel,
       title: 'Intellectual Property',
-      content: `All content on this website, including text, graphics, logos, images, and software, is the property of NextGen Energy Industries Limited or its content suppliers and is protected by Indian and international copyright laws.
+      content: `All content on this website, including text, graphics, logos, images, and software, is the property of Naxen Exim India Energy Industries Limited or its content suppliers and is protected by Indian and international copyright laws.
 
       You may not:
       • Reproduce, duplicate, copy, or resell any part of our website
@@ -49,7 +49,7 @@ export default function TermsConditions() {
     {
       icon: AlertCircle,
       title: 'Limitation of Liability',
-      content: `To the fullest extent permitted by applicable law, NextGen Energy Industries Limited shall not be liable for:
+      content: `To the fullest extent permitted by applicable law, Naxen Exim India Energy Industries Limited shall not be liable for:
       
       • Any indirect, incidental, special, or consequential damages
       • Loss of profits, revenue, data, or business opportunities
@@ -177,7 +177,7 @@ export default function TermsConditions() {
               <p className="text-gray-600 leading-relaxed">
                 Our failure to enforce any right or provision of these Terms shall not constitute 
                 a waiver of such right or provision. Any waiver must be in writing and signed by 
-                an authorized representative of NextGen Energy.
+                an authorized representative of Naxen Exim India Energy.
               </p>
             </div>
 
@@ -193,7 +193,7 @@ export default function TermsConditions() {
               <h3 className="text-lg font-bold text-slate-950 mb-2">Entire Agreement</h3>
               <p className="text-gray-600 leading-relaxed">
                 These Terms, together with our Privacy Policy, constitute the entire agreement 
-                between you and NextGen Energy regarding your use of our website and services.
+                between you and Naxen Exim India Energy regarding your use of our website and services.
               </p>
             </div>
 
@@ -238,11 +238,11 @@ export default function TermsConditions() {
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <a
-              href="mailto:legal@nextgenenergy.com"
+              href="mailto:legal@Naxen Exim Indiaenergy.com"
               className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-accent-green text-slate-950 font-bold rounded-lg hover:bg-accent-green/80 transition"
             >
               <Mail className="w-5 h-5" />
-              legal@nextgenenergy.com
+              legal@Naxen Exim Indiaenergy.com
             </a>
             <a
               href="tel:+9101204291595"
@@ -253,7 +253,7 @@ export default function TermsConditions() {
             </a>
           </div>
           <p className="text-gray-500 mt-8">
-            NextGen Energy Industries Limited<br />
+            Naxen Exim India Energy Industries Limited<br />
             Plot No. 123, Sector 63, Noida, Uttar Pradesh - 201301, India
           </p>
         </div>

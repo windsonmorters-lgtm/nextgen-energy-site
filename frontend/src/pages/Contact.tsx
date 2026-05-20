@@ -40,7 +40,7 @@ export default function Contact() {
       location: 'Ghaziabad, Uttar Pradesh',
       address: '123 Industrial Complex, Ghaziabad 201001, India',
       phone: '+91 97673 50000',
-      email: 'corporate@nextgen.in',
+      email: 'corporate@Naxen Exim India.in',
       hours: 'Mon-Fri: 9:00 AM - 6:00 PM'
     },
     {
@@ -48,7 +48,7 @@ export default function Contact() {
       location: 'New Delhi',
       address: '456 Production Zone, Delhi 110095, India',
       phone: '+91 98765 43210',
-      email: 'plant@nextgen.in',
+      email: 'plant@Naxen Exim India.in',
       hours: 'Mon-Fri: 8:00 AM - 8:00 PM'
     }
   ]
@@ -245,7 +245,7 @@ export default function Contact() {
                 )}
                 {submitStatus === 'error' && (
                   <p className="text-sm text-red-600 text-center">
-                    Something went wrong. Please try again or email corporate@nextgen.in
+                    Something went wrong. Please try again or email corporate@Naxen Exim India.in
                   </p>
                 )}
                 {submitStatus === 'idle' && (
@@ -259,10 +259,10 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Why Partner With NextGen */}
+      {/* Why Partner With Naxen Exim India */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-16 text-slate-950">Why Partner With NextGen?</h2>
+          <h2 className="text-4xl font-bold text-center mb-16 text-slate-950">Why Partner With Naxen Exim India?</h2>
           <div className="grid md:grid-cols-4 gap-8">
             {[
               { title: 'Quality Assured', desc: 'ISO 9001:2015 & AIS 156 certified products', icon: '✅' },

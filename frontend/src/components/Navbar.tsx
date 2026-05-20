@@ -81,7 +81,7 @@ export default function Navbar() {
             <div className="w-10 h-10 bg-gradient-to-br from-accent-green to-accent-cyan rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-lg">⚡</span>
             </div>
-            <span className="text-xl font-bold text-white hidden sm:inline">NextGen</span>
+            <span className="text-xl font-bold text-white hidden sm:inline">Naxen Exim India</span>
           </Link>
 
           <div className="hidden lg:flex items-center gap-8">

@@ -214,7 +214,7 @@ export default function Solutions() {
       <section className="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-950 text-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Why Choose NextGen Solutions?</h2>
+            <h2 className="text-4xl font-bold mb-4">Why Choose Naxen Exim India Solutions?</h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
               Industry-leading technology combined with unmatched customer support
             </p>

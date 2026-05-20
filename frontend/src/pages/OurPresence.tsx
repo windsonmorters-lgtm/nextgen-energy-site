@@ -45,7 +45,7 @@ export default function OurPresence() {
             </div>
             <h1 className="text-5xl md:text-6xl font-bold mb-6">Our Presence</h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              NextGen Energy has a strong presence across India with manufacturing units, 
+              Naxen Exim India Energy has a strong presence across India with manufacturing units, 
               regional offices, and an extensive dealer network.
             </p>
           </motion.div>
@@ -104,7 +104,7 @@ export default function OurPresence() {
                 </p>
                 <p className="flex items-center gap-3">
                   <Mail className="w-5 h-5 text-accent-green" />
-                  <span>info@nextgenenergy.com</span>
+                  <span>info@Naxen Exim Indiaenergy.com</span>
                 </p>
               </div>
             </motion.div>
@@ -134,7 +134,7 @@ export default function OurPresence() {
                 </p>
                 <p className="flex items-center gap-3">
                   <Mail className="w-5 h-5 text-accent-cyan" />
-                  <span>production@nextgenenergy.com</span>
+                  <span>production@Naxen Exim Indiaenergy.com</span>
                 </p>
               </div>
             </motion.div>
@@ -218,7 +218,7 @@ export default function OurPresence() {
                 ))}
               </ul>
               <a
-                href="mailto:partnerships@nextgenenergy.com"
+                href="mailto:partnerships@Naxen Exim Indiaenergy.com"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-accent-green text-slate-950 font-bold rounded-lg hover:bg-accent-green/80 transition"
               >
                 Become a Partner

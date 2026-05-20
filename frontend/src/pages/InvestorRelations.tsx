@@ -1,4 +1,4 @@
-﻿import { motion } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { FileText, TrendingUp, Users, Award, Download } from 'lucide-react'
 
@@ -13,13 +13,13 @@ export default function InvestorRelations() {
   ]
 
   const stockInfo = {
-    symbol: 'NEXTGEN',
+    symbol: 'Naxen Exim India',
     exchange: 'NSE SME',
-    currentPrice: 'â‚¹425.50',
+    currentPrice: '₹425.50',
     change: '+8.5%',
-    marketCap: 'â‚¹2,140 Cr',
-    yearHigh: 'â‚¹485.00',
-    yearLow: 'â‚¹195.50',
+    marketCap: '₹2,140 Cr',
+    yearHigh: '₹485.00',
+    yearLow: '₹195.50',
     pe: '24.8x'
   }
 
@@ -117,7 +117,7 @@ export default function InvestorRelations() {
                   <FileText className="w-10 h-10 text-accent-green flex-shrink-0" />
                   <motion.div initial={{ opacity: 0, x: -10 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
                     <h4 className="font-semibold text-slate-950">{doc.title}</h4>
-                    <p className="text-sm text-gray-600">{doc.date} â€¢ {doc.size}</p>
+                    <p className="text-sm text-gray-600">{doc.date} • {doc.size}</p>
                   </motion.div>
                 </motion.div>
                 <button className="px-6 py-2 bg-gradient-to-r from-accent-green to-accent-cyan text-slate-950 font-semibold rounded-lg opacity-0 group-hover:opacity-100 transition flex items-center gap-2">
@@ -135,10 +135,10 @@ export default function InvestorRelations() {
           <h2 className="text-4xl font-bold text-center mb-16 text-slate-950">Board of Directors</h2>
           <div className="grid md:grid-cols-4 gap-8">
             {[
-              { name: 'Mr. Rajesh Kumar', title: 'Chairman & MD', icon: 'ðŸ‘¨â€ðŸ’¼' },
-              { name: 'Ms. Priya Singh', title: 'CFO & Director', icon: 'ðŸ‘©â€ðŸ’¼' },
-              { name: 'Mr. Amit Patel', title: 'CTO & Director', icon: 'ðŸ‘¨â€ðŸ’¼' },
-              { name: 'Mr. Vikram Sharma', title: 'Independent Director', icon: 'ðŸ‘¨â€ðŸ’¼' }
+              { name: 'Mr. Rajesh Kumar', title: 'Chairman & MD', icon: '👨‍💼' },
+              { name: 'Ms. Priya Singh', title: 'CFO & Director', icon: '👩‍💼' },
+              { name: 'Mr. Amit Patel', title: 'CTO & Director', icon: '👨‍💼' },
+              { name: 'Mr. Vikram Sharma', title: 'Independent Director', icon: '👨‍💼' }
             ].map((director, idx) => (
               <motion.div
                 key={idx}
@@ -177,7 +177,7 @@ export default function InvestorRelations() {
                 <ul className="space-y-3">
                   {committee.items.map((item, iidx) => (
                     <li key={iidx} className="flex items-center gap-3 text-gray-700">
-                      <span className="text-accent-cyan">âœ“</span>
+                      <span className="text-accent-cyan">✓</span>
                       {item}
                     </li>
                   ))}
@@ -194,8 +194,8 @@ export default function InvestorRelations() {
           <h2 className="text-4xl font-bold text-slate-950 mb-4">Investor Relations Team</h2>
           <p className="text-lg text-slate-900 mb-8">Have questions for our IR team?</p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <a href="mailto:ir@nextgen.in" className="px-8 py-4 bg-slate-950 text-accent-green font-bold rounded-lg hover:shadow-lg transition">
-              ir@nextgen.in
+            <a href="mailto:ir@Naxen Exim India.in" className="px-8 py-4 bg-slate-950 text-accent-green font-bold rounded-lg hover:shadow-lg transition">
+              ir@Naxen Exim India.in
             </a>
             <Link to="/contact" className="px-8 py-4 bg-slate-950 text-accent-green font-bold rounded-lg hover:shadow-lg transition">
               Schedule a Meeting

@@ -73,7 +73,7 @@ export default function PrivacyPolicy() {
       • Portability: Request transfer of your data
       • Withdraw Consent: Withdraw consent at any time
       
-      To exercise these rights, please contact us at privacy@nextgenenergy.com`
+      To exercise these rights, please contact us at privacy@Naxen Exim Indiaenergy.com`
     },
   ]
 
@@ -104,7 +104,7 @@ export default function PrivacyPolicy() {
       <section className="py-12 bg-white border-b border-slate-200">
         <div className="max-w-4xl mx-auto px-4">
           <p className="text-gray-700 leading-relaxed">
-            NextGen Energy Industries Limited ("we," "our," or "us") is committed to protecting 
+            Naxen Exim India Energy Industries Limited ("we," "our," or "us") is committed to protecting 
             your privacy. This Privacy Policy describes how we handle your personal information 
             when you visit our website, use our products or services, or interact with us.
           </p>
@@ -201,21 +201,21 @@ export default function PrivacyPolicy() {
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <a
-              href="mailto:privacy@nextgenenergy.com"
+              href="mailto:privacy@Naxen Exim Indiaenergy.com"
               className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-accent-green text-slate-950 font-bold rounded-lg hover:bg-accent-green/80 transition"
             >
               <Mail className="w-5 h-5" />
-              privacy@nextgenenergy.com
+              privacy@Naxen Exim Indiaenergy.com
             </a>
             <a
-              href="mailto:info@nextgenenergy.com"
+              href="mailto:info@Naxen Exim Indiaenergy.com"
               className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-white/20 text-white font-bold rounded-lg hover:bg-white/10 transition"
             >
-              info@nextgenenergy.com
+              info@Naxen Exim Indiaenergy.com
             </a>
           </div>
           <p className="text-gray-500 mt-8">
-            NextGen Energy Industries Limited<br />
+            Naxen Exim India Energy Industries Limited<br />
             Plot No. 123, Sector 63, Noida, Uttar Pradesh - 201301, India
           </p>
         </div>

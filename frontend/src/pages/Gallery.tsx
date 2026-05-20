@@ -161,7 +161,7 @@ export default function Gallery() {
             >
               <h3 className="text-2xl font-bold text-slate-950 mb-4">Our Workplace Culture</h3>
               <p className="text-gray-600 mb-6 leading-relaxed">
-                At NextGen Energy, we believe in fostering a culture of innovation, collaboration, 
+                At Naxen Exim India Energy, we believe in fostering a culture of innovation, collaboration, 
                 and continuous learning. Our state-of-the-art facilities and dedicated teams work 
                 together to deliver excellence in every battery we produce.
               </p>

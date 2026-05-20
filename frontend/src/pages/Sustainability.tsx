@@ -71,7 +71,7 @@ export default function Sustainability() {
             <div>
               <h2 className="text-4xl font-bold text-slate-950 mb-6">Our Green Ecosystem</h2>
               <p className="text-gray-600 mb-4">
-                NextGen is committed to environmental responsibility through advanced battery recycling and resource recovery programs. We've established a complete circular economy framework that transforms end-of-life batteries into valuable raw materials.
+                Naxen Exim India is committed to environmental responsibility through advanced battery recycling and resource recovery programs. We've established a complete circular economy framework that transforms end-of-life batteries into valuable raw materials.
               </p>
               <p className="text-gray-600 mb-6">
                 Our state-of-the-art recycling facility processes batteries with minimal environmental impact, recovering over 95% of valuable materials including lithium, cobalt, manganese, and nickel.
@@ -177,7 +177,7 @@ export default function Sustainability() {
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-6">Battery Buyback Program</h2>
           <p className="text-center text-gray-300 mb-16 max-w-3xl mx-auto">
-            We offer competitive pricing for used NextGen batteries and compatible systems. Our buyback program makes it easy to upgrade while supporting the circular economy.
+            We offer competitive pricing for used Naxen Exim India batteries and compatible systems. Our buyback program makes it easy to upgrade while supporting the circular economy.
           </p>
           <div className="grid md:grid-cols-4 gap-6">
             {buybackProgram.map((item, idx) => (

@@ -211,7 +211,7 @@ export default function Career() {
                       ))}
                     </ul>
                     <a
-                      href="mailto:careers@nextgenenergy.com?subject=Application for {job.title}"
+                      href="mailto:careers@Naxen Exim Indiaenergy.com?subject=Application for {job.title}"
                       className="inline-flex items-center gap-2 px-6 py-3 bg-accent-green text-slate-950 font-bold rounded-lg hover:bg-accent-green/80 transition"
                     >
                       Apply Now
@@ -236,7 +236,7 @@ export default function Career() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               { step: '1', title: 'Find a Role', desc: 'Browse our current openings and find a position that matches your skills' },
-              { step: '2', title: 'Submit Application', desc: 'Send your resume and cover letter to careers@nextgenenergy.com' },
+              { step: '2', title: 'Submit Application', desc: 'Send your resume and cover letter to careers@Naxen Exim Indiaenergy.com' },
               { step: '3', title: 'Interview Process', desc: 'Our team will review and schedule interviews with shortlisted candidates' },
             ].map((item, idx) => (
               <motion.div
@@ -267,17 +267,17 @@ export default function Career() {
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <a
-              href="mailto:careers@nextgenenergy.com"
+              href="mailto:careers@Naxen Exim Indiaenergy.com"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-slate-950 text-accent-green font-bold rounded-lg hover:shadow-2xl transition"
             >
               <Briefcase className="w-5 h-5" />
               Send Your Resume
             </a>
             <a
-              href="mailto:careers@nextgenenergy.com"
+              href="mailto:careers@Naxen Exim Indiaenergy.com"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-slate-950 text-slate-950 font-bold rounded-lg hover:bg-slate-950/10 transition"
             >
-              careers@nextgenenergy.com
+              careers@Naxen Exim Indiaenergy.com
             </a>
           </div>
         </div>

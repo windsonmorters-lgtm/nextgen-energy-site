@@ -13,7 +13,7 @@ export default function Footer() {
               <div className="w-8 h-8 bg-gradient-to-br from-accent-green to-accent-cyan rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold">⚡</span>
               </div>
-              <h3 className="text-base sm:text-lg font-bold text-white">NextGen</h3>
+              <h3 className="text-base sm:text-lg font-bold text-white">Naxen Exim India</h3>
             </div>
             <p className="text-xs sm:text-sm text-gray-400 mb-4">
               India's premier lithium-ion battery manufacturing platform powering sustainable mobility.
@@ -92,7 +92,7 @@ export default function Footer() {
             <Mail size={18} className="text-accent-cyan flex-shrink-0 mt-0.5" />
             <div>
               <p className="text-sm text-gray-400">Email</p>
-              <p className="text-white text-sm sm:text-base">contact@nextgen.in</p>
+              <p className="text-white text-sm sm:text-base">contact@Naxen Exim India.in</p>
             </div>
           </div>
           <div className="flex gap-3 items-start">
@@ -106,7 +106,7 @@ export default function Footer() {
 
         {/* Bottom Footer */}
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left">
-          <p className="text-xs sm:text-sm text-gray-500 order-3 sm:order-1">&copy; 2026 NextGen Energy. All rights reserved.</p>
+          <p className="text-xs sm:text-sm text-gray-500 order-3 sm:order-1">&copy; 2026 Naxen Exim India Energy. All rights reserved.</p>
           <div className="flex gap-4 order-1 sm:order-2">
             <a href="#" className="text-gray-400 hover:text-accent-green transition p-1">
               <Linkedin size={18} />

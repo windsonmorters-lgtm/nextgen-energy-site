@@ -28,7 +28,7 @@ export default function About() {
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="pt-16">
       <section className="bg-gradient-to-r from-slate-950 to-slate-900 text-white py-20">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="max-w-7xl mx-auto px-4">
-          <h1 className="text-5xl font-bold mb-4">About NextGen</h1>
+          <h1 className="text-5xl font-bold mb-4">About Naxen Exim India</h1>
           <p className="text-xl text-gray-300">India's circular lithium energy platform — from manufacturing to recycling</p>
         </motion.div>
       </section>
@@ -39,7 +39,7 @@ export default function About() {
             <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
               <h2 className="text-4xl font-bold text-slate-950 mb-6">Our Story</h2>
               <p className="text-gray-600 mb-4">
-                NextGen Energy was founded with a vision to make India self-reliant in lithium-ion battery technology. What began as a small R&D lab in Ghaziabad has grown into a 55,000 sq. ft. state-of-the-art manufacturing facility producing over 12,500 battery packs per month.
+                Naxen Exim India Energy was founded with a vision to make India self-reliant in lithium-ion battery technology. What began as a small R&D lab in Ghaziabad has grown into a 55,000 sq. ft. state-of-the-art manufacturing facility producing over 12,500 battery packs per month.
               </p>
               <p className="text-gray-600 mb-6">
                 Today, we serve 26+ OEM partners across e-mobility, telecom, and grid storage — with a unique circular ecosystem that recovers and reuses critical minerals from end-of-life batteries.

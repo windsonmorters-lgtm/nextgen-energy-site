@@ -69,18 +69,18 @@ export default function Home() {
 
   // Testimonials data
   const testimonials = [
-    { name: 'Rajesh Kumar', role: 'E-Rickshaw Fleet Owner', text: 'As I Provide E-Rickshaws on rent, I was looking for an alternate to costly batteries without compromising on performance. Currently I\'ve been completely satisfied with the results I\'ve got from E Rickshaw batteries by NextGen Energy.' },
-    { name: 'Priya Sharma', role: 'Electric Bicycle User', text: 'These Lithium Batteries are really powerful. I purchased 2 Lithium Batteries one for my Electric Bicycle and other one for my Bike. Working really well. Great Product Team NextGen.' },
+    { name: 'Rajesh Kumar', role: 'E-Rickshaw Fleet Owner', text: 'As I Provide E-Rickshaws on rent, I was looking for an alternate to costly batteries without compromising on performance. Currently I\'ve been completely satisfied with the results I\'ve got from E Rickshaw batteries by Naxen Exim India Energy.' },
+    { name: 'Priya Sharma', role: 'Electric Bicycle User', text: 'These Lithium Batteries are really powerful. I purchased 2 Lithium Batteries one for my Electric Bicycle and other one for my Bike. Working really well. Great Product Team Naxen Exim India.' },
     { name: 'Amit Patel', role: 'EV Enthusiast', text: 'Only had it a couple weeks but so far works as expected. Light weight, small, no voltage drops off down to 60%. Haven\'t been able to discharge it below that in a day\'s usage.' },
-    { name: 'Vikram Singh', role: 'E-Bike Owner', text: 'Heard of NextGen Batteries and took risk to buy lithium batteries for my E-Bike. Turns a great deal for myself. Great Battery backup with Quick charging.' }
+    { name: 'Vikram Singh', role: 'E-Bike Owner', text: 'Heard of Naxen Exim India Batteries and took risk to buy lithium batteries for my E-Bike. Turns a great deal for myself. Great Battery backup with Quick charging.' }
   ]
 
   // Press releases data
   const pressReleases = [
-    { title: 'NextGen Energy Launches IoT-Enabled Smart BMS for Smarter Lithium Battery Solutions', date: 'Jan 15, 2026', category: 'Technology' },
-    { title: 'NextGen\'s New Smart BMS Enhances EV Battery Safety & Real-Time Performance', date: 'Jan 10, 2026', category: 'Innovation' },
-    { title: 'NextGen Energy Accelerates Intelligent EV Mobility with Advanced Smart BMS', date: 'Jan 5, 2026', category: 'Product Launch' },
-    { title: 'NextGen Energy Gains Media Spotlight Among India\'s Top Battery Stocks to Watch in 2026', date: 'Dec 28, 2025', category: 'Recognition' }
+    { title: 'Naxen Exim India Energy Launches IoT-Enabled Smart BMS for Smarter Lithium Battery Solutions', date: 'Jan 15, 2026', category: 'Technology' },
+    { title: 'Naxen Exim India\'s New Smart BMS Enhances EV Battery Safety & Real-Time Performance', date: 'Jan 10, 2026', category: 'Innovation' },
+    { title: 'Naxen Exim India Energy Accelerates Intelligent EV Mobility with Advanced Smart BMS', date: 'Jan 5, 2026', category: 'Product Launch' },
+    { title: 'Naxen Exim India Energy Gains Media Spotlight Among India\'s Top Battery Stocks to Watch in 2026', date: 'Dec 28, 2025', category: 'Recognition' }
   ]
 
   return (
@@ -252,7 +252,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-3 sm:mb-4 text-slate-950 px-4">Words Of Our Clients</h2>
           <p className="text-center text-gray-600 mb-8 sm:mb-12 md:mb-16 max-w-2xl mx-auto px-4 text-sm sm:text-base">
-            What our customers say about their experience with NextGen Energy batteries
+            What our customers say about their experience with Naxen Exim India Energy batteries
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
             {testimonials.map((testimonial, idx) => (
@@ -427,7 +427,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-950 mb-4 sm:mb-6">Ready to Transform Your Energy?</h2>
           <p className="text-base sm:text-lg text-slate-900 mb-6 sm:mb-8">
-            Partner with NextGen — India's leading lithium battery manufacturer
+            Partner with Naxen Exim India — India's leading lithium battery manufacturer
           </p>
           <Link
             to="/contact"

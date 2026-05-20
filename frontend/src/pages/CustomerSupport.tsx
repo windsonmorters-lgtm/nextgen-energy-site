@@ -41,7 +41,7 @@ export default function CustomerSupport() {
             <h1 className="text-5xl md:text-6xl font-bold mb-6">Customer Support</h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               We're here to help with your questions, technical issues, and product inquiries 
-              for a seamless experience with NextGen Energy products.
+              for a seamless experience with Naxen Exim India Energy products.
             </p>
           </motion.div>
         </div>
@@ -53,7 +53,7 @@ export default function CustomerSupport() {
           <div className="grid md:grid-cols-4 gap-6">
             {[
               { icon: Phone, title: 'Phone', content: '+91 0120-4291595', subtext: 'Mon-Sat, 9AM-6PM IST' },
-              { icon: Mail, title: 'Email', content: 'info@nextgenenergy.com', subtext: 'Response within 24 hours' },
+              { icon: Mail, title: 'Email', content: 'info@Naxen Exim Indiaenergy.com', subtext: 'Response within 24 hours' },
               { icon: MessageCircle, title: 'WhatsApp', content: '+91 98765-43210', subtext: 'Instant messaging support' },
               { icon: Clock, title: 'Working Hours', content: 'Mon-Sat: 9AM-6PM', subtext: 'Sunday: Closed' },
             ].map((item, idx) => (
@@ -145,7 +145,7 @@ export default function CustomerSupport() {
 
           <div className="space-y-4">
             {[
-              { q: 'What is the warranty period for NextGen batteries?', a: 'Our lithium batteries come with a standard 3-year warranty, extendable up to 5 years with our premium care plan.' },
+              { q: 'What is the warranty period for Naxen Exim India batteries?', a: 'Our lithium batteries come with a standard 3-year warranty, extendable up to 5 years with our premium care plan.' },
               { q: 'How do I claim warranty for my battery?', a: 'You can claim warranty by visiting any of our authorized service centers with your purchase invoice and warranty card. You can also initiate a claim through our customer support helpline.' },
               { q: 'What is the typical lifespan of a lithium battery?', a: 'Our lithium batteries are designed to last 2000+ charge cycles, which typically translates to 5-7 years of usage depending on your usage pattern.' },
               { q: 'Do you provide installation services?', a: 'Yes, we provide free installation at our authorized service centers. For bulk orders, we also offer on-site installation services.' },
@@ -185,7 +185,7 @@ export default function CustomerSupport() {
               Call Us Now
             </a>
             <a
-              href="mailto:info@nextgenenergy.com"
+              href="mailto:info@Naxen Exim Indiaenergy.com"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-slate-950 text-slate-950 font-bold rounded-lg hover:bg-slate-950/10 transition"
             >
               <Mail size={20} />

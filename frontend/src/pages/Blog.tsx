@@ -14,9 +14,9 @@ interface BlogPost {
 
 const defaultPosts: BlogPost[] = [
   {
-    title: 'NextGen Expands Recycling Capacity by 40%',
+    title: 'Naxen Exim India Expands Recycling Capacity by 40%',
     excerpt: 'Our Ghaziabad facility now processes 5,000+ batteries annually with 95% material recovery rates.',
-    author: 'NextGen Team',
+    author: 'Naxen Exim India Team',
     publishedAt: '2024-10-15',
   },
   {
@@ -27,13 +27,13 @@ const defaultPosts: BlogPost[] = [
   },
   {
     title: 'NSE SME Listing: A Milestone for Indian Battery Manufacturing',
-    excerpt: 'NextGen becomes one of the first dedicated lithium battery manufacturers on NSE SME platform.',
+    excerpt: 'Naxen Exim India becomes one of the first dedicated lithium battery manufacturers on NSE SME platform.',
     author: 'Priya Singh, CFO',
     publishedAt: '2024-07-10',
   },
   {
     title: 'Partnership with Leading E-Rickshaw OEMs',
-    excerpt: 'Strategic supply agreements bring NextGen packs to 8 new states across North India.',
+    excerpt: 'Strategic supply agreements bring Naxen Exim India packs to 8 new states across North India.',
     author: 'Rajesh Kumar, MD',
     publishedAt: '2024-06-05',
   },
