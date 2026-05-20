@@ -40,6 +40,16 @@ function App() {
           </Routes>
         </main>
         <Footer />
+        
+        {/* Floating QR Code - Bottom Right */}
+        <div className="fixed bottom-4 right-4 z-50 flex flex-col items-center gap-2">
+          <span className="text-xs text-gray-500 bg-white/90 px-2 py-1 rounded shadow">Scan to Contact</span>
+          <img 
+            src="/qr contact.jpeg" 
+            alt="Contact QR Code" 
+            className="w-24 h-24 sm:w-32 sm:h-32 rounded-lg shadow-xl border-2 border-white hover:scale-110 transition-transform duration-300 cursor-pointer"
+          />
+        </div>
       </div>
     </BrowserRouter>
   )
