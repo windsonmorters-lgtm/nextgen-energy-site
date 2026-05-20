@@ -13,9 +13,8 @@ export default function Footer() {
               <img 
                 src="/logo.png" 
                 alt="Naxen Exim India" 
-                className="w-8 h-8 object-contain rounded-lg bg-white/10"
+                className="h-16 w-auto object-contain rounded-lg"
               />
-              <h3 className="text-base sm:text-lg font-bold text-white">Naxen Exim India</h3>
             </div>
             <p className="text-xs sm:text-sm text-gray-400 mb-4">
               India's premier lithium-ion battery manufacturing platform powering sustainable mobility.
@@ -94,7 +93,7 @@ export default function Footer() {
             <Mail size={18} className="text-accent-cyan flex-shrink-0 mt-0.5" />
             <div>
               <p className="text-sm text-gray-400">Email</p>
-              <p className="text-white text-sm sm:text-base">contact@Naxen Exim India.in</p>
+              <p className="text-white text-sm sm:text-base">contact@nextgen.in</p>
             </div>
           </div>
           <div className="flex gap-3 items-start">
@@ -108,7 +107,7 @@ export default function Footer() {
 
         {/* Bottom Footer */}
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left">
-          <p className="text-xs sm:text-sm text-gray-500 order-3 sm:order-1">&copy; 2026 Naxen Exim India Energy. All rights reserved.</p>
+          <p className="text-xs sm:text-sm text-gray-500 order-3 sm:order-1">&copy; 2026 Naxen Exim India. All rights reserved.</p>
           <div className="flex gap-4 order-1 sm:order-2">
             <a href="#" className="text-gray-400 hover:text-accent-green transition p-1">
               <Linkedin size={18} />
