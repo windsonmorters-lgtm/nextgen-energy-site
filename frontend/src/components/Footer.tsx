@@ -16,6 +16,10 @@ export default function Footer() {
                 className="h-16 w-auto object-contain rounded-lg"
               />
             </div>
+            {/* Hindi Tagline */}
+            <p className="text-lg sm:text-xl text-accent-green font-medium mb-2 tracking-wide" style={{ fontFamily: 'Georgia, serif' }}>
+              एक शर्तिया इलाज
+            </p>
             <p className="text-xs sm:text-sm text-gray-400 mb-4">
               India's premier lithium-ion battery manufacturing platform powering sustainable mobility.
             </p>
