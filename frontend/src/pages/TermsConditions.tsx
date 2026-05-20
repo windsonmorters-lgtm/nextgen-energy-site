@@ -249,7 +249,7 @@ export default function TermsConditions() {
               className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-white/20 text-white font-bold rounded-lg hover:bg-white/10 transition"
             >
               <Phone className="w-5 h-5" />
-              +91 0120-4291595
+              +91 +91 7625888880
             </a>
           </div>
           <p className="text-gray-500 mt-8">

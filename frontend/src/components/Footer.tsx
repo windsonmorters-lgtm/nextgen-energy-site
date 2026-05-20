@@ -90,14 +90,14 @@ export default function Footer() {
             <Phone size={18} className="text-accent-green flex-shrink-0 mt-0.5" />
             <div>
               <p className="text-sm text-gray-400">Phone</p>
-              <p className="text-white text-sm sm:text-base">+91 9876 543 210</p>
+              <p className="text-white text-sm sm:text-base">+91 +91 7625888880</p>
             </div>
           </div>
           <div className="flex gap-3 items-start">
             <Mail size={18} className="text-accent-cyan flex-shrink-0 mt-0.5" />
             <div>
               <p className="text-sm text-gray-400">Email</p>
-              <p className="text-white text-sm sm:text-base">contact@nextgen.in</p>
+              <p className="text-white text-sm sm:text-base">narottam@naxenindia.com</p>
             </div>
           </div>
           <div className="flex gap-3 items-start">

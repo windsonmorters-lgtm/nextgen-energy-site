@@ -52,7 +52,7 @@ export default function CustomerSupport() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-6">
             {[
-              { icon: Phone, title: 'Phone', content: '+91 0120-4291595', subtext: 'Mon-Sat, 9AM-6PM IST' },
+              { icon: Phone, title: 'Phone', content: '+91 +91 7625888880', subtext: 'Mon-Sat, 9AM-6PM IST' },
               { icon: Mail, title: 'Email', content: 'info@Naxen Exim Indiaenergy.com', subtext: 'Response within 24 hours' },
               { icon: MessageCircle, title: 'WhatsApp', content: '+91 98765-43210', subtext: 'Instant messaging support' },
               { icon: Clock, title: 'Working Hours', content: 'Mon-Sat: 9AM-6PM', subtext: 'Sunday: Closed' },

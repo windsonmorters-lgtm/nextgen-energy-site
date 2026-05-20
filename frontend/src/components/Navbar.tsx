@@ -8,7 +8,7 @@ const mainLinks = [
   { label: 'Products', path: '/products', icon: '🔋' },
   { label: 'Appliance', path: '/appliance', icon: '📺' },
   { label: 'Spare Parts', path: '/spare-parts', icon: '🔧' },
-  { label: 'E-Services', path: '/e-services', icon: '💻' },
+  { label: 'EV-Services', path: '/e-services', icon: '💻' },
   { label: 'Solutions', path: '/solutions', icon: '⚡' },
   { label: 'About', path: '/about', icon: '🏢' },
   { label: 'Careers', path: '/career', icon: '💼' },
@@ -58,7 +58,7 @@ export default function Navbar() {
             <div className="flex items-center gap-2 sm:gap-4">
               <a href="tel:+911204291595" className="hidden lg:flex items-center gap-2 text-gray-300 hover:text-accent-green transition">
                 <Phone className="w-4 h-4" />
-                <span className="text-sm">0120-4291595</span>
+                <span className="text-sm">+91 7625888880</span>
               </a>
               <Link to="/our-presence" className="hidden sm:flex items-center gap-1 text-gray-300 hover:text-accent-green transition">
                 <MapPin className="w-4 h-4" />

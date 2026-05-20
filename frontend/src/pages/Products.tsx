@@ -70,10 +70,10 @@ export default function Products() {
                   >
                     <Phone className="w-5 h-5" />
                     <span className="sm:hidden">Call Now</span>
-                    <span className="hidden sm:inline">Call: 0120-4291595</span>
+                    <span className="hidden sm:inline">Call: +91 7625888880</span>
                   </a>
                   <a
-                    href="mailto:info@nextgen.in"
+                    href="mailto:narottam@naxenindia.com"
                     className="flex items-center justify-center gap-2 px-4 sm:px-6 py-3 border-2 border-accent-cyan text-accent-cyan font-semibold rounded-lg hover:bg-accent-cyan/10 transition text-sm sm:text-base"
                   >
                     <Mail className="w-5 h-5" />

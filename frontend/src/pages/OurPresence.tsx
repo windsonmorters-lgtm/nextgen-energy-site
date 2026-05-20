@@ -100,7 +100,7 @@ export default function OurPresence() {
                 </p>
                 <p className="flex items-center gap-3">
                   <Phone className="w-5 h-5 text-accent-green" />
-                  <span>+91 0120-4291595</span>
+                  <span>+91 +91 7625888880</span>
                 </p>
                 <p className="flex items-center gap-3">
                   <Mail className="w-5 h-5 text-accent-green" />
