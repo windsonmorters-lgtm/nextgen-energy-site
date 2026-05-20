@@ -28,7 +28,7 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto pr-2 sm:pr-4 pl-0">
           <div className="flex items-center justify-between h-16 gap-2 sm:gap-4">
             {/* Logo - Extreme left edge */}
-            <Link to="/" className="flex items-center gap-2 sm:gap-3 flex-shrink-0 -ml-2 sm:-ml-4">
+            <Link to="/" className="flex items-center gap-2 sm:gap-3 flex-shrink-0 -ml-6">
               <img 
                 src="/logoo.png" 
                 alt="NAXEN EXIM INDIA" 
