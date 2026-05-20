@@ -1,49 +1,20 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { Menu, X, ChevronDown, Search, Phone, MapPin } from 'lucide-react'
+import { Menu, X, Search, Phone, MapPin } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 
-// Main categories like e-commerce sites (Amazon/Flipkart style)
-const mainCategories = [
-  {
-    label: 'EV Batteries',
-    path: '/products',
-    icon: '🔋',
-    subcategories: ['E-Scooter', 'E-Rickshaw', 'E-Cycle', 'E-Bike'],
-  },
-  {
-    label: 'Solar Solutions',
-    path: '/solutions#solar-energy',
-    icon: '☀️',
-    subcategories: ['Home Solar', 'Commercial', 'Industrial'],
-  },
-  {
-    label: 'Energy Storage',
-    path: '/products',
-    icon: '⚡',
-    subcategories: ['ESS', 'Telecom', 'Grid Storage'],
-  },
-  {
-    label: 'Custom Solutions',
-    path: '/solutions#consumer-electronics',
-    icon: '⚙️',
-    subcategories: ['Medical', 'Robotics', 'IoT Devices'],
-  },
-]
-
-// Secondary menu items
-const secondaryLinks = [
-  { label: 'About', path: '/about' },
-  { label: 'Sustainability', path: '/sustainability' },
-  { label: 'Media', path: '/blog' },
-  { label: 'Careers', path: '/career' },
-  { label: 'Support', path: '/customer-support' },
+// Main navigation items - flat structure, no dropdowns
+const mainLinks = [
+  { label: 'Products', path: '/products', icon: '🔋' },
+  { label: 'Solutions', path: '/solutions', icon: '⚡' },
+  { label: 'About', path: '/about', icon: '🏢' },
+  { label: 'Media', path: '/blog', icon: '📰' },
+  { label: 'Careers', path: '/career', icon: '💼' },
+  { label: 'Support', path: '/customer-support', icon: '🎧' },
 ]
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
-  const [activeCategory, setActiveCategory] = useState<string | null>(null)
-  const [showAllCategories, setShowAllCategories] = useState(false)
   const location = useLocation()
 
   const isActive = (path: string) => location.pathname === path
@@ -108,149 +79,27 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* Category Navigation Bar - E-commerce Style */}
+      {/* Navigation Bar - Flat Style (No Dropdowns) */}
       <nav className="hidden lg:block bg-slate-900 border-b border-slate-800">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex items-center h-12 gap-1">
-            {/* All Categories Button */}
-            <button
-              onClick={() => setShowAllCategories(!showAllCategories)}
-              className="flex items-center gap-2 px-4 py-2 bg-accent-green/10 text-accent-green rounded-lg hover:bg-accent-green/20 transition font-medium"
-            >
-              <Menu className="w-4 h-4" />
-              <span>All Categories</span>
-            </button>
-
-            <div className="w-px h-6 bg-slate-700 mx-2" />
-
-            {/* Main Categories */}
-            {mainCategories.map((category) => (
-              <div
-                key={category.label}
-                className="relative"
-                onMouseEnter={() => setActiveCategory(category.label)}
-                onMouseLeave={() => setActiveCategory(null)}
-              >
-                <Link
-                  to={category.path}
-                  className={`flex items-center gap-1.5 px-4 py-2 rounded-lg transition font-medium text-sm ${
-                    isActive(category.path) 
-                      ? 'bg-accent-green/20 text-accent-green' 
-                      : 'text-gray-300 hover:bg-slate-800 hover:text-white'
-                  }`}
-                >
-                  <span>{category.icon}</span>
-                  <span>{category.label}</span>
-                  <ChevronDown className={`w-3 h-3 transition ${activeCategory === category.label ? 'rotate-180' : ''}`} />
-                </Link>
-
-                {/* Mega Menu Dropdown */}
-                <AnimatePresence>
-                  {activeCategory === category.label && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 5 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 5 }}
-                      className="absolute top-full left-0 mt-1 w-56 bg-slate-800 border border-slate-700 rounded-lg shadow-xl overflow-hidden z-50"
-                    >
-                      <div className="p-3">
-                        <p className="text-xs text-gray-500 uppercase font-semibold mb-2 px-2">Subcategories</p>
-                        {category.subcategories.map((sub) => (
-                          <Link
-                            key={sub}
-                            to={category.path}
-                            className="block px-3 py-2 text-sm text-gray-300 hover:text-accent-green hover:bg-slate-700/50 rounded-lg transition"
-                          >
-                            {sub}
-                          </Link>
-                        ))}
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            ))}
-
-            <div className="w-px h-6 bg-slate-700 mx-2" />
-
-            {/* Secondary Links */}
-            {secondaryLinks.map((link) => (
+            {mainLinks.map((link) => (
               <Link
                 key={link.label}
                 to={link.path}
-                className={`px-3 py-2 rounded-lg transition text-sm font-medium ${
+                className={`flex items-center gap-1.5 px-4 py-2 rounded-lg transition font-medium text-sm ${
                   isActive(link.path) 
-                    ? 'text-accent-green' 
-                    : 'text-gray-400 hover:text-white hover:bg-slate-800'
+                    ? 'bg-accent-green/20 text-accent-green' 
+                    : 'text-gray-300 hover:bg-slate-800 hover:text-white'
                 }`}
               >
-                {link.label}
+                <span>{link.icon}</span>
+                <span>{link.label}</span>
               </Link>
             ))}
           </div>
         </div>
       </nav>
-
-      {/* All Categories Sidebar Overlay */}
-      <AnimatePresence>
-        {showAllCategories && (
-          <>
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={() => setShowAllCategories(false)}
-              className="fixed inset-0 bg-black/50 z-40 lg:block hidden"
-            />
-            <motion.div
-              initial={{ x: -300 }}
-              animate={{ x: 0 }}
-              exit={{ x: -300 }}
-              className="fixed left-0 top-[104px] bottom-0 w-72 bg-slate-900 border-r border-slate-800 z-50 overflow-y-auto lg:block hidden"
-            >
-              <div className="p-4">
-                <h3 className="text-lg font-bold text-white mb-4">All Categories</h3>
-                {mainCategories.map((category) => (
-                  <div key={category.label} className="mb-4">
-                    <Link
-                      to={category.path}
-                      onClick={() => setShowAllCategories(false)}
-                      className="flex items-center gap-2 text-white font-medium mb-2 hover:text-accent-green transition"
-                    >
-                      <span className="text-xl">{category.icon}</span>
-                      {category.label}
-                    </Link>
-                    <div className="ml-7 space-y-1">
-                      {category.subcategories.map((sub) => (
-                        <Link
-                          key={sub}
-                          to={category.path}
-                          onClick={() => setShowAllCategories(false)}
-                          className="block text-sm text-gray-400 hover:text-accent-green transition"
-                        >
-                          {sub}
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-                <div className="border-t border-slate-800 my-4" />
-                <h4 className="text-sm font-semibold text-gray-500 uppercase mb-2">More</h4>
-                {secondaryLinks.map((link) => (
-                  <Link
-                    key={link.label}
-                    to={link.path}
-                    onClick={() => setShowAllCategories(false)}
-                    className="block py-2 text-gray-300 hover:text-accent-green transition"
-                  >
-                    {link.label}
-                  </Link>
-                ))}
-              </div>
-            </motion.div>
-          </>
-        )}
-      </AnimatePresence>
 
       {/* Mobile Menu */}
       <AnimatePresence>
@@ -273,47 +122,17 @@ export default function Navbar() {
               </div>
             </div>
 
-            {/* Mobile Categories */}
+            {/* Mobile Navigation Links */}
             <div className="p-4">
-              <p className="text-xs text-gray-500 uppercase font-semibold mb-3">Categories</p>
-              {mainCategories.map((category) => (
-                <div key={category.label} className="mb-3">
-                  <Link
-                    to={category.path}
-                    onClick={() => setIsOpen(false)}
-                    className="flex items-center gap-2 text-white font-medium py-2 hover:text-accent-green transition"
-                  >
-                    <span className="text-lg">{category.icon}</span>
-                    {category.label}
-                  </Link>
-                  <div className="ml-8 space-y-1">
-                    {category.subcategories.map((sub) => (
-                      <Link
-                        key={sub}
-                        to={category.path}
-                        onClick={() => setIsOpen(false)}
-                        className="block text-sm text-gray-400 py-1 hover:text-accent-green transition"
-                      >
-                        {sub}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="border-t border-slate-800" />
-
-            {/* Mobile Secondary Links */}
-            <div className="p-4">
-              <p className="text-xs text-gray-500 uppercase font-semibold mb-3">Quick Links</p>
-              {secondaryLinks.map((link) => (
+              <p className="text-xs text-gray-500 uppercase font-semibold mb-3">Menu</p>
+              {mainLinks.map((link) => (
                 <Link
                   key={link.label}
                   to={link.path}
                   onClick={() => setIsOpen(false)}
-                  className="block py-2 text-gray-300 hover:text-accent-green transition"
+                  className="flex items-center gap-2 text-white font-medium py-2 hover:text-accent-green transition"
                 >
+                  <span className="text-lg">{link.icon}</span>
                   {link.label}
                 </Link>
               ))}
