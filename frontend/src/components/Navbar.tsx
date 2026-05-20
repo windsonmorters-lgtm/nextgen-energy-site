@@ -30,9 +30,9 @@ export default function Navbar() {
             {/* Logo */}
             <Link to="/" className="flex items-center gap-3 flex-shrink-0">
               <img 
-                src="/logo.png" 
+                src="/logoo.png" 
                 alt="NAXEN EXIM INDIA" 
-                className="h-12 w-auto object-contain"
+                className="h-14 w-auto object-contain rounded-lg"
               />
               <div className="hidden lg:flex flex-col">
                 <span className="text-lg font-black text-white tracking-wider uppercase" style={{ fontFamily: 'Montserrat, Arial Black, sans-serif', letterSpacing: '0.15em' }}>
