@@ -10,15 +10,11 @@ export default function Footer() {
           {/* Company Info */}
           <div>
             <div className="flex flex-col gap-2 mb-4">
-              <img 
-                src="/logo.png" 
-                alt="NAXEN EXIM INDIA" 
-                className="h-14 w-auto object-contain"
-              />
+              
               <span className="text-base font-black text-white tracking-wider uppercase" style={{ fontFamily: 'Montserrat, Arial Black, sans-serif', letterSpacing: '0.15em' }}>
                 NAXEN EXIM INDIA
               </span>
-              <span className="text-sm text-accent-cyan font-semibold tracking-widest uppercase" style={{ fontFamily: 'Georgia, Cambria, serif', letterSpacing: '0.2em' }}>
+              <span className="text-sm text-accent-cyan font-semibold tracking-widest uppercase" style={{ fontFamily: 'fangsong', letterSpacing: '0.2em' }}>
                 एक शर्तिया इलाज
               </span>
             </div>
