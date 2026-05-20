@@ -78,10 +78,12 @@ export default function Navbar() {
           className="flex justify-between items-center h-16"
         >
           <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 bg-gradient-to-br from-accent-green to-accent-cyan rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">⚡</span>
-            </div>
-            <span className="text-xl font-bold text-white hidden sm:inline">Naxen Exim India</span>
+            <img 
+              src="/logo.png" 
+              alt="Naxen Exim India" 
+              className="w-10 h-10 object-contain rounded-lg bg-white/10"
+            />
+            <span className="text-lg sm:text-xl font-bold text-white">Naxen Exim</span>
           </Link>
 
           <div className="hidden lg:flex items-center gap-8">

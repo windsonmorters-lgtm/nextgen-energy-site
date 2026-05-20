@@ -10,9 +10,11 @@ export default function Footer() {
           {/* Company Info */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-br from-accent-green to-accent-cyan rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold">⚡</span>
-              </div>
+              <img 
+                src="/logo.png" 
+                alt="Naxen Exim India" 
+                className="w-8 h-8 object-contain rounded-lg bg-white/10"
+              />
               <h3 className="text-base sm:text-lg font-bold text-white">Naxen Exim India</h3>
             </div>
             <p className="text-xs sm:text-sm text-gray-400 mb-4">
