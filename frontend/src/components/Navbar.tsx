@@ -15,6 +15,16 @@ const menuItems = [
     ],
   },
   {
+    label: 'Solutions',
+    path: '/solutions',
+    submenu: [
+      { label: 'Electric Vehicle', path: '/solutions#electric-vehicle' },
+      { label: 'Solar Energy Storage', path: '/solutions#solar-energy' },
+      { label: 'Portable Lighting', path: '/solutions#portable-lighting' },
+      { label: 'Consumer Electronics', path: '/solutions#consumer-electronics' },
+    ],
+  },
+  {
     label: 'Sustainability',
     path: '/sustainability',
     submenu: [

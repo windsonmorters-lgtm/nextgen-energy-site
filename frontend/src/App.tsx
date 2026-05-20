@@ -8,6 +8,7 @@ import InvestorRelations from './pages/InvestorRelations'
 import About from './pages/About'
 import Blog from './pages/Blog'
 import Contact from './pages/Contact'
+import Solutions from './pages/Solutions'
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Route path="/investor-relations" element={<InvestorRelations />} />
             <Route path="/about" element={<About />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/solutions" element={<Solutions />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>
