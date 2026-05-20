@@ -42,26 +42,24 @@ function App() {
         <Footer />
         
         {/* Floating QR Codes - Bottom Right */}
-        <div className="fixed bottom-4 right-4 z-50 flex flex-col items-center gap-3">
-          {/* Contact QR */}
+        <div className="fixed bottom-4 right-4 z-50 flex flex-col items-center gap-2">
+          {/* WhatsApp QR - Top */}
+          <div className="flex flex-col items-center gap-1">
+            <span className="text-xs text-green-600 bg-white/90 px-2 py-1 rounded shadow font-medium">WhatsApp</span>
+            <img 
+              src="/whatsapp.jpeg" 
+              alt="WhatsApp QR Code" 
+              className="w-16 h-16 sm:w-20 sm:h-20 rounded-lg shadow-xl border-2 border-white hover:scale-105 transition-transform duration-300 cursor-pointer"
+            />
+          </div>
+          
+          {/* Contact QR - Bottom */}
           <div className="flex flex-col items-center gap-1">
             <span className="text-xs text-gray-600 bg-white/90 px-2 py-1 rounded shadow font-medium">Contact</span>
             <img 
               src="/qr contact.jpeg" 
               alt="Contact QR Code" 
-              className="w-20 h-20 sm:w-28 sm:h-28 rounded-lg shadow-xl border-2 border-white hover:scale-105 transition-transform duration-300 cursor-pointer"
-            />
-          </div>
-          
-          {/* WhatsApp QR */}
-          <div className="flex flex-col items-center gap-1">
-            <span className="text-xs text-green-600 bg-white/90 px-2 py-1 rounded shadow font-medium flex items-center gap-1">
-              <span>WhatsApp</span>
-            </span>
-            <img 
-              src="/whatsapp.jpeg" 
-              alt="WhatsApp QR Code" 
-              className="w-20 h-20 sm:w-28 sm:h-28 rounded-lg shadow-xl border-2 border-white hover:scale-105 transition-transform duration-300 cursor-pointer"
+              className="w-16 h-16 sm:w-20 sm:h-20 rounded-lg shadow-xl border-2 border-white hover:scale-105 transition-transform duration-300 cursor-pointer"
             />
           </div>
         </div>

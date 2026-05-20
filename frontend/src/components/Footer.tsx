@@ -106,7 +106,7 @@ export default function Footer() {
             <MapPin size={18} className="text-accent-green flex-shrink-0 mt-0.5" />
             <div>
               <p className="text-sm text-gray-400">Headquarters</p>
-              <p className="text-white text-sm sm:text-base">Ghaziabad, India</p>
+              <p className="text-white text-sm sm:text-base">Gurugram, India</p>
             </div>
           </div>
         </div>

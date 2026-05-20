@@ -34,14 +34,6 @@ export default function Navbar() {
                 alt="NAXEN EXIM INDIA" 
                 className="h-14 w-auto object-contain rounded-lg"
               />
-              <div className="hidden lg:flex flex-col">
-                <span className="text-lg font-black text-white tracking-wider uppercase" style={{ fontFamily: 'Montserrat, Arial Black, sans-serif', letterSpacing: '0.15em' }}>
-                  NAXEN EXIM INDIA
-                </span>
-                <span className="text-xs text-accent-cyan font-semibold tracking-widest uppercase mt-0.5" style={{ fontFamily: 'Georgia, Cambria, serif', letterSpacing: '0.2em' }}>
-                  एक शर्तिया इलाज
-                </span>
-              </div>
             </Link>
 
             {/* Search Bar - Hidden on mobile */}
