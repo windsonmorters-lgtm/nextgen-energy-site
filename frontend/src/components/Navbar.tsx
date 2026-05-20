@@ -31,12 +31,14 @@ export default function Navbar() {
             <Link to="/" className="flex items-center gap-3 flex-shrink-0">
               <img 
                 src="/logo.png" 
-                alt="Naxen Exim India" 
-                className="h-14 w-auto object-contain rounded-lg"
+                alt="NAXEN EXIM INDIA" 
+                className="h-12 w-auto object-contain"
               />
               <div className="hidden lg:flex flex-col">
-                <span className="text-xl font-bold text-white">Naxen Exim India</span>
-                <span className="text-sm text-accent-cyan italic" style={{ fontFamily: 'Cambria, Cochin, Georgia, Times, serif' }}>
+                <span className="text-lg font-black text-white tracking-wider uppercase" style={{ fontFamily: 'Montserrat, Arial Black, sans-serif', letterSpacing: '0.15em' }}>
+                  NAXEN EXIM INDIA
+                </span>
+                <span className="text-xs text-accent-cyan font-semibold tracking-widest uppercase mt-0.5" style={{ fontFamily: 'Georgia, Cambria, serif', letterSpacing: '0.2em' }}>
                   एक शर्तिया इलाज
                 </span>
               </div>

@@ -47,7 +47,7 @@ function App() {
           <img 
             src="/qr contact.jpeg" 
             alt="Contact QR Code" 
-            className="w-24 h-24 sm:w-32 sm:h-32 rounded-lg shadow-xl border-2 border-white hover:scale-110 transition-transform duration-300 cursor-pointer"
+            className="w-18 h-18 sm:w-32 sm:h-32 rounded-lg shadow-xl border-2 border-white hover:scale-110 transition-transform duration-300 cursor-pointer"
           />
         </div>
       </div>

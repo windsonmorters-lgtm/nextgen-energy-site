@@ -9,17 +9,19 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
           {/* Company Info */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
+            <div className="flex flex-col gap-2 mb-4">
               <img 
                 src="/logo.png" 
-                alt="Naxen Exim India" 
-                className="h-16 w-auto object-contain rounded-lg"
+                alt="NAXEN EXIM INDIA" 
+                className="h-14 w-auto object-contain"
               />
+              <span className="text-base font-black text-white tracking-wider uppercase" style={{ fontFamily: 'Montserrat, Arial Black, sans-serif', letterSpacing: '0.15em' }}>
+                NAXEN EXIM INDIA
+              </span>
+              <span className="text-sm text-accent-cyan font-semibold tracking-widest uppercase" style={{ fontFamily: 'Georgia, Cambria, serif', letterSpacing: '0.2em' }}>
+                एक शर्तिया इलाज
+              </span>
             </div>
-            {/* Hindi Tagline */}
-            <p className="text-lg sm:text-xl text-accent-green font-medium mb-2 tracking-wide" style={{ fontFamily: 'Georgia, serif' }}>
-              एक शर्तिया इलाज
-            </p>
             <p className="text-xs sm:text-sm text-gray-400 mb-4">
               India's premier lithium-ion battery manufacturing platform powering sustainable mobility.
             </p>
