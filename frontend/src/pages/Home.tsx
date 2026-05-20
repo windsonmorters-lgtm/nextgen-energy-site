@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { ArrowRight, Zap, BarChart3, Globe, Leaf } from 'lucide-react'
-import { useEffect, useState } from 'react'
+import { ArrowRight, Zap, BarChart3, Globe, Leaf, ChevronLeft, ChevronRight, Quote, Award, Shield, Users, Microscope, FileText, Newspaper } from 'lucide-react'
+import { useEffect, useState, useRef } from 'react'
 
 export default function Home() {
   const [counts, setCounts] = useState({ facility: 0, capacity: 0, pincodes: 0, partners: 0 })
@@ -47,6 +47,40 @@ export default function Home() {
     { phase: 'Buyback', description: 'Strategic battery buyback programs', color: 'from-green-500' },
     { phase: 'Second-Life', description: 'Refurbishment for stationary applications', color: 'from-yellow-500' },
     { phase: 'Recycling', description: 'Black mass processing & mineral recovery', color: 'from-red-500' }
+  ]
+
+  // Product showcase data - Electric Scooter Batteries
+  const products = [
+    { name: 'E-Scooter Battery 48V 29AH', voltage: '48V', capacity: '29AH', weight: '14.5 Kg', image: '/battery-48v.jpg' },
+    { name: 'E-Scooter Battery 60V 25AH', voltage: '60V', capacity: '25AH', weight: '15.2 Kg', image: '/battery-60v.jpg' },
+    { name: 'E-Scooter Battery 60V 29AH', voltage: '60V', capacity: '29AH', weight: '16.8 Kg', image: '/battery-60v-29.jpg' },
+    { name: 'E-Rickshaw Battery 51.2V 100AH', voltage: '51.2V', capacity: '100AH', weight: '38 Kg', image: '/battery-erickshaw.jpg' },
+    { name: 'Inverter Battery 12.8V 150AH', voltage: '12.8V', capacity: '150AH', weight: '18 Kg', image: '/battery-inverter.jpg' },
+    { name: 'Solar Battery 51.2V 100AH', voltage: '51.2V', capacity: '100AH', weight: '42 Kg', image: '/battery-solar.jpg' }
+  ]
+
+  // Core Strengths data
+  const coreStrengths = [
+    { icon: Microscope, title: 'Advanced Technology', description: 'Driven by continuous innovation, our lithium solutions deliver higher efficiency, faster charging, and smarter performance for modern energy needs.' },
+    { icon: Award, title: 'Unmatched Quality', description: 'Every battery undergoes rigorous multi-stage testing to ensure long-lasting durability, reliable output, and consistent performance in every condition.' },
+    { icon: Shield, title: 'Global Standards', description: 'Our products comply with international certifications, meeting stringent safety, and sustainability benchmarks recognized across global markets.' },
+    { icon: Users, title: 'Trusted Partnerships', description: 'Collaborating with leading OEMs, distributors, and energy innovators, we build strong, long-term relationships that drive mutual growth.' }
+  ]
+
+  // Testimonials data
+  const testimonials = [
+    { name: 'Rajesh Kumar', role: 'E-Rickshaw Fleet Owner', text: 'As I Provide E-Rickshaws on rent, I was looking for an alternate to costly batteries without compromising on performance. Currently I\'ve been completely satisfied with the results I\'ve got from E Rickshaw batteries by NextGen Energy.' },
+    { name: 'Priya Sharma', role: 'Electric Bicycle User', text: 'These Lithium Batteries are really powerful. I purchased 2 Lithium Batteries one for my Electric Bicycle and other one for my Bike. Working really well. Great Product Team NextGen.' },
+    { name: 'Amit Patel', role: 'EV Enthusiast', text: 'Only had it a couple weeks but so far works as expected. Light weight, small, no voltage drops off down to 60%. Haven\'t been able to discharge it below that in a day\'s usage.' },
+    { name: 'Vikram Singh', role: 'E-Bike Owner', text: 'Heard of NextGen Batteries and took risk to buy lithium batteries for my E-Bike. Turns a great deal for myself. Great Battery backup with Quick charging.' }
+  ]
+
+  // Press releases data
+  const pressReleases = [
+    { title: 'NextGen Energy Launches IoT-Enabled Smart BMS for Smarter Lithium Battery Solutions', date: 'Jan 15, 2026', category: 'Technology' },
+    { title: 'NextGen\'s New Smart BMS Enhances EV Battery Safety & Real-Time Performance', date: 'Jan 10, 2026', category: 'Innovation' },
+    { title: 'NextGen Energy Accelerates Intelligent EV Mobility with Advanced Smart BMS', date: 'Jan 5, 2026', category: 'Product Launch' },
+    { title: 'NextGen Energy Gains Media Spotlight Among India\'s Top Battery Stocks to Watch in 2026', date: 'Dec 28, 2025', category: 'Recognition' }
   ]
 
   return (
@@ -129,6 +163,167 @@ export default function Home() {
                 <p className="text-gray-600">{item.label}</p>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Product Showcase Section */}
+      <section className="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
+        <div className="max-w-7xl mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center mb-4">Introducing Next-Gen Electric Scooter Battery Range</h2>
+          <p className="text-center text-gray-400 mb-12 max-w-2xl mx-auto">
+            High-performance lithium batteries designed for every EV application
+          </p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {products.map((product, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: idx * 0.1 }}
+                className="bg-slate-800 rounded-xl overflow-hidden border border-slate-700 hover:border-accent-green/50 transition group"
+              >
+                <div className="h-48 bg-gradient-to-br from-accent-green/20 to-accent-cyan/20 flex items-center justify-center">
+                  <Zap className="w-20 h-20 text-accent-green/60" />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-white mb-3">{product.name}</h3>
+                  <div className="grid grid-cols-3 gap-3 mb-4 text-sm">
+                    <div className="text-center p-2 bg-slate-700 rounded">
+                      <p className="text-accent-cyan font-bold">{product.voltage}</p>
+                      <p className="text-gray-400 text-xs">Voltage</p>
+                    </div>
+                    <div className="text-center p-2 bg-slate-700 rounded">
+                      <p className="text-accent-cyan font-bold">{product.capacity}</p>
+                      <p className="text-gray-400 text-xs">Capacity</p>
+                    </div>
+                    <div className="text-center p-2 bg-slate-700 rounded">
+                      <p className="text-accent-cyan font-bold">{product.weight}</p>
+                      <p className="text-gray-400 text-xs">Weight</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-2">
+                    <Link
+                      to="/contact"
+                      className="flex-1 px-4 py-2 bg-accent-green text-slate-950 font-bold rounded-lg text-center hover:bg-accent-green/80 transition text-sm"
+                    >
+                      Enquire Now
+                    </Link>
+                    <Link
+                      to="/products"
+                      className="flex-1 px-4 py-2 border border-accent-cyan text-accent-cyan font-bold rounded-lg text-center hover:bg-accent-cyan/10 transition text-sm"
+                    >
+                      More Details
+                    </Link>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Our Core Strengths Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center mb-16 text-slate-950">Our Core Strengths</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {coreStrengths.map((strength, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: idx * 0.1 }}
+                className="p-8 bg-gradient-to-br from-slate-50 to-white rounded-xl border-2 border-slate-200 hover:border-accent-green/50 transition text-center group"
+              >
+                <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-accent-green to-accent-cyan rounded-full flex items-center justify-center group-hover:scale-110 transition">
+                  <strength.icon className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-slate-950 mb-3">{strength.title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{strength.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-20 bg-gradient-to-br from-slate-50 to-white">
+        <div className="max-w-7xl mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center mb-4 text-slate-950">Words Of Our Clients</h2>
+          <p className="text-center text-gray-600 mb-16 max-w-2xl mx-auto">
+            What our customers say about their experience with NextGen Energy batteries
+          </p>
+          <div className="grid md:grid-cols-2 gap-8">
+            {testimonials.map((testimonial, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: idx * 0.1 }}
+                className="p-8 bg-white rounded-xl shadow-lg border border-slate-200 hover:shadow-xl transition"
+              >
+                <Quote className="w-10 h-10 text-accent-green/30 mb-4" />
+                <p className="text-gray-700 mb-6 leading-relaxed">{testimonial.text}</p>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-accent-green to-accent-cyan rounded-full flex items-center justify-center text-white font-bold">
+                    {testimonial.name.charAt(0)}
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-slate-950">{testimonial.name}</h4>
+                    <p className="text-sm text-gray-500">{testimonial.role}</p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Media Coverage / Press Releases Section */}
+      <section className="py-20 bg-slate-900 text-white">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="flex items-center gap-3 mb-4">
+            <Newspaper className="w-8 h-8 text-accent-green" />
+            <h2 className="text-4xl font-bold">Media Coverage & Press Releases</h2>
+          </div>
+          <p className="text-gray-400 mb-12 max-w-2xl">
+            Stay updated with our latest innovations, product launches, and company achievements
+          </p>
+          <div className="grid md:grid-cols-2 gap-6">
+            {pressReleases.map((press, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ delay: idx * 0.1 }}
+                className="p-6 bg-slate-800 rounded-xl border border-slate-700 hover:border-accent-green/50 transition group cursor-pointer"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-accent-green/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <FileText className="w-6 h-6 text-accent-green" />
+                  </div>
+                  <div className="flex-1">
+                    <span className="inline-block px-3 py-1 bg-accent-cyan/20 text-accent-cyan text-xs rounded-full mb-2">
+                      {press.category}
+                    </span>
+                    <h3 className="text-lg font-bold text-white mb-2 group-hover:text-accent-green transition">
+                      {press.title}
+                    </h3>
+                    <p className="text-sm text-gray-400">{press.date}</p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+          <div className="text-center mt-10">
+            <Link
+              to="/blog"
+              className="inline-flex items-center gap-2 px-6 py-3 border border-accent-cyan text-accent-cyan font-bold rounded-lg hover:bg-accent-cyan/10 transition"
+            >
+              View All Press Releases
+              <ArrowRight size={20} />
+            </Link>
           </div>
         </div>
       </section>
