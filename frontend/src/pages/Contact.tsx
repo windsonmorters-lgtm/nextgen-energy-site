@@ -39,7 +39,7 @@ export default function Contact() {
       city: 'Corporate Office',
       location: 'Ghaziabad, Uttar Pradesh',
       address: '123 Industrial Complex, Ghaziabad 201001, India',
-      phone: '+91 97673 50000',
+      phone: '+91-76258-88880',
       email: 'corporate@Naxen Exim India.in',
       hours: 'Mon-Fri: 9:00 AM - 6:00 PM'
     },
@@ -47,7 +47,7 @@ export default function Contact() {
       city: 'Manufacturing Plant',
       location: 'New Delhi',
       address: '456 Production Zone, Delhi 110095, India',
-      phone: '+91 98765 43210',
+      phone: '+91-76258-88880',
       email: 'plant@Naxen Exim India.in',
       hours: 'Mon-Fri: 8:00 AM - 8:00 PM'
     }
@@ -172,7 +172,7 @@ export default function Contact() {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    placeholder="+91 98765 43210"
+                    placeholder="+91-76258-88880"
                     className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:border-accent-green focus:ring-2 focus:ring-accent-green/20"
                     required
                   />

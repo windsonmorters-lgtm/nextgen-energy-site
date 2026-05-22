@@ -4,10 +4,10 @@ import { Target, Users, Award, Factory } from 'lucide-react'
 
 export default function About() {
   const leadership = [
-    { name: 'Mr. Rajesh Kumar', title: 'Chairman & Managing Director', bio: '25+ years in energy storage and EV manufacturing' },
-    { name: 'Ms. Priya Singh', title: 'Chief Financial Officer', bio: 'Former Big-4 finance leader, NSE SME listing specialist' },
-    { name: 'Mr. Amit Patel', title: 'Chief Technology Officer', bio: 'Battery R&D pioneer with 15+ patents in BMS technology' },
-    { name: 'Mr. Vikram Sharma', title: 'Head of Operations', bio: 'Scaled production from 2K to 12.5K packs/month' },
+    { name: 'Mr. Narottam Agarwal', title: 'Chairman & Managing Director', bio: '25+ years in energy storage and EV manufacturing' },
+    { name: 'Ms. Manya Agarwal', title: 'Chief Financial Officer', bio: 'Former Big-4 finance leader, NSE SME listing specialist' },
+    { name: 'Mr. Manmeet Singh', title: 'Chief Technology Officer', bio: 'Battery R&D pioneer with 15+ patents in BMS technology' },
+    { name: 'Mr. Pawan Rajpoot', title: 'Head of Operations', bio: 'Scaled production from 2K to 12.5K packs/month' },
   ]
 
   const certifications = [
@@ -18,10 +18,10 @@ export default function About() {
   ]
 
   const milestones = [
-    { year: '2018', event: 'Founded in Ghaziabad with first pilot production line' },
-    { year: '2020', event: 'Expanded to 55,000 sq. ft. automated manufacturing facility' },
-    { year: '2022', event: 'Launched circular battery recycling program' },
-    { year: '2024', event: 'Listed on NSE SME; 26+ OEM partnerships nationwide' },
+    { year: '2020', event: 'Founded in Churu, Rajasthan' },
+    { year: '2022', event: 'Implemented Strategy' },
+    { year: '2024', event: 'Multiple Tie-Ups for Delivering State of the Art Solution ' },
+    { year: '2025', event: 'Launched Devi Battery, EV-Fit' },
   ]
 
   return (
