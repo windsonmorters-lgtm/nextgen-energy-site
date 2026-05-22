@@ -30,9 +30,9 @@ export default function OurPresence() {
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-950 text-white overflow-hidden">
+      <section className="relative py-16 sm:py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-950 text-white overflow-hidden">
         <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-1/2 left-1/3 w-96 h-96 bg-accent-cyan rounded-full filter blur-3xl" />
+          <div className="absolute top-1/2 left-1/3 w-64 sm:w-96 h-64 sm:h-96 bg-accent-cyan rounded-full filter blur-3xl" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4">
           <motion.div
@@ -40,11 +40,11 @@ export default function OurPresence() {
             animate={{ opacity: 1, y: 0 }}
             className="text-center"
           >
-            <div className="w-20 h-20 mx-auto mb-6 bg-accent-green/20 rounded-full flex items-center justify-center">
-              <Globe className="w-10 h-10 text-accent-green" />
+            <div className="w-16 sm:w-20 h-16 sm:h-20 mx-auto mb-4 sm:mb-6 bg-accent-green/20 rounded-full flex items-center justify-center">
+              <Globe className="w-8 sm:w-10 h-8 sm:h-10 text-accent-green" />
             </div>
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">Our Presence</h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6">Our Presence</h1>
+            <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto px-2 sm:px-0">
               Naxen Exim India Energy has a strong presence across India with manufacturing units, 
               regional offices, and an extensive dealer network.
             </p>
@@ -53,9 +53,9 @@ export default function OurPresence() {
       </section>
 
       {/* Stats */}
-      <section className="py-12 bg-white border-b border-slate-200">
+      <section className="py-8 sm:py-12 bg-white border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8">
             {stats.map((stat, idx) => (
               <motion.div
                 key={idx}
@@ -64,8 +64,8 @@ export default function OurPresence() {
                 transition={{ delay: idx * 0.1 }}
                 className="text-center"
               >
-                <p className="text-4xl font-bold text-accent-cyan mb-1">{stat.value}</p>
-                <p className="text-gray-600 text-sm">{stat.label}</p>
+                <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-accent-cyan mb-1">{stat.value}</p>
+                <p className="text-gray-600 text-xs sm:text-sm">{stat.label}</p>
               </motion.div>
             ))}
           </div>
@@ -73,24 +73,24 @@ export default function OurPresence() {
       </section>
 
       {/* Headquarters */}
-      <section className="py-16 bg-slate-50">
+      <section className="py-10 sm:py-16 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-slate-950 mb-4">Corporate Headquarters</h2>
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold text-slate-950 mb-4">Corporate Headquarters</h2>
           </div>
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-4 sm:gap-8">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
-              className="p-8 bg-white rounded-xl shadow-sm border border-slate-200"
+              className="p-4 sm:p-8 bg-white rounded-xl shadow-sm border border-slate-200"
             >
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 bg-accent-green/10 rounded-lg flex items-center justify-center">
-                  <Building2 className="w-6 h-6 text-accent-green" />
+              <div className="flex items-center gap-3 mb-4 sm:mb-6">
+                <div className="w-10 sm:w-12 h-10 sm:h-12 bg-accent-green/10 rounded-lg flex items-center justify-center">
+                  <Building2 className="w-5 sm:w-6 h-5 sm:h-6 text-accent-green" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-slate-950">Head Office</h3>
-                  <p className="text-accent-cyan font-semibold">Delhi NCR</p>
+                  <h3 className="text-lg sm:text-xl font-bold text-slate-950">Head Office</h3>
+                  <p className="text-accent-cyan font-semibold text-sm sm:text-base">Delhi NCR</p>
                 </div>
               </div>
               <div className="space-y-3 text-gray-600">
@@ -112,15 +112,15 @@ export default function OurPresence() {
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
-              className="p-8 bg-white rounded-xl shadow-sm border border-slate-200"
+              className="p-4 sm:p-8 bg-white rounded-xl shadow-sm border border-slate-200"
             >
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 bg-accent-cyan/10 rounded-lg flex items-center justify-center">
-                  <Building2 className="w-6 h-6 text-accent-cyan" />
+              <div className="flex items-center gap-3 mb-4 sm:mb-6">
+                <div className="w-10 sm:w-12 h-10 sm:h-12 bg-accent-cyan/10 rounded-lg flex items-center justify-center">
+                  <Building2 className="w-5 sm:w-6 h-5 sm:h-6 text-accent-cyan" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-slate-950">Manufacturing Unit</h3>
-                  <p className="text-accent-cyan font-semibold">Greater Noida</p>
+                  <h3 className="text-lg sm:text-xl font-bold text-slate-950">Manufacturing Unit</h3>
+                  <p className="text-accent-cyan font-semibold text-sm sm:text-base">Greater Noida</p>
                 </div>
               </div>
               <div className="space-y-3 text-gray-600">
@@ -143,27 +143,27 @@ export default function OurPresence() {
       </section>
 
       {/* State-wise Presence */}
-      <section className="py-16 bg-white">
+      <section className="py-10 sm:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-slate-950 mb-4">State-wise Presence</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold text-slate-950 mb-4">State-wise Presence</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base px-2 sm:px-0">
               Our network spans across major states in India with dedicated teams 
               serving each region efficiently.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {states.map((state, idx) => (
               <motion.div
                 key={idx}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: idx * 0.03 }}
-                className="p-6 bg-slate-50 rounded-xl border border-slate-200 hover:border-accent-green/50 transition"
+                className="p-4 sm:p-6 bg-slate-50 rounded-xl border border-slate-200 hover:border-accent-green/50 transition"
               >
-                <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-lg font-bold text-slate-950">{state.name}</h3>
+                <div className="flex items-center justify-between mb-3 sm:mb-4">
+                  <h3 className="text-base sm:text-lg font-bold text-slate-950">{state.name}</h3>
                   <span className={`px-2 py-1 rounded text-xs font-semibold ${
                     state.type === 'Headquarters' ? 'bg-purple-100 text-purple-700' :
                     state.type === 'Manufacturing' ? 'bg-blue-100 text-blue-700' :
@@ -173,11 +173,11 @@ export default function OurPresence() {
                     {state.type}
                   </span>
                 </div>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-1.5 sm:gap-2">
                   {state.cities.map((city, cidx) => (
                     <span
                       key={cidx}
-                      className="px-2 py-1 bg-white text-slate-700 rounded text-sm border border-slate-200"
+                      className="px-1.5 sm:px-2 py-0.5 sm:py-1 bg-white text-slate-700 rounded text-xs sm:text-sm border border-slate-200"
                     >
                       {city}
                     </span>
@@ -190,20 +190,20 @@ export default function OurPresence() {
       </section>
 
       {/* Dealer Network */}
-      <section className="py-16 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-950 text-white">
+      <section className="py-10 sm:py-16 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-950 text-white">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-6 sm:gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
             >
-              <h2 className="text-3xl font-bold mb-6">Join Our Dealer Network</h2>
-              <p className="text-gray-400 mb-6 leading-relaxed">
+              <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">Join Our Dealer Network</h2>
+              <p className="text-gray-400 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
                 Become a part of India's fastest-growing lithium battery network. 
                 We offer attractive partnership opportunities for dealers and distributors 
                 across all major cities.
               </p>
-              <ul className="space-y-3 mb-8">
+              <ul className="space-y-2 sm:space-y-3 mb-6 sm:mb-8">
                 {[
                   'Comprehensive product training and support',
                   'Marketing and promotional assistance',
@@ -211,15 +211,15 @@ export default function OurPresence() {
                   'Priority access to new products',
                   'Dedicated relationship manager',
                 ].map((item, idx) => (
-                  <li key={idx} className="flex items-center gap-3 text-gray-300">
-                    <div className="w-2 h-2 bg-accent-green rounded-full" />
+                  <li key={idx} className="flex items-center gap-2 sm:gap-3 text-gray-300 text-sm sm:text-base">
+                    <div className="w-2 h-2 bg-accent-green rounded-full flex-shrink-0" />
                     {item}
                   </li>
                 ))}
               </ul>
               <a
                 href="mailto:partnerships@Naxen Exim Indiaenergy.com"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-accent-green text-slate-950 font-bold rounded-lg hover:bg-accent-green/80 transition"
+                className="inline-flex items-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 bg-accent-green text-slate-950 font-bold rounded-lg hover:bg-accent-green/80 transition text-sm sm:text-base"
               >
                 Become a Partner
               </a>
@@ -227,28 +227,28 @@ export default function OurPresence() {
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
-              className="p-8 bg-white/5 rounded-2xl border border-white/10"
+              className="p-4 sm:p-8 bg-white/5 rounded-2xl border border-white/10"
             >
-              <div className="grid grid-cols-2 gap-6">
-                <div className="text-center p-4 bg-white/5 rounded-lg">
-                  <Users className="w-8 h-8 text-accent-green mx-auto mb-2" />
-                  <p className="text-2xl font-bold">500+</p>
-                  <p className="text-sm text-gray-400">Authorized Dealers</p>
+              <div className="grid grid-cols-2 gap-3 sm:gap-6">
+                <div className="text-center p-3 sm:p-4 bg-white/5 rounded-lg">
+                  <Users className="w-6 sm:w-8 h-6 sm:h-8 text-accent-green mx-auto mb-1 sm:mb-2" />
+                  <p className="text-xl sm:text-2xl font-bold">500+</p>
+                  <p className="text-xs sm:text-sm text-gray-400">Authorized Dealers</p>
                 </div>
-                <div className="text-center p-4 bg-white/5 rounded-lg">
-                  <Building2 className="w-8 h-8 text-accent-cyan mx-auto mb-2" />
-                  <p className="text-2xl font-bold">50+</p>
-                  <p className="text-sm text-gray-400">Service Centers</p>
+                <div className="text-center p-3 sm:p-4 bg-white/5 rounded-lg">
+                  <Building2 className="w-6 sm:w-8 h-6 sm:h-8 text-accent-cyan mx-auto mb-1 sm:mb-2" />
+                  <p className="text-xl sm:text-2xl font-bold">50+</p>
+                  <p className="text-xs sm:text-sm text-gray-400">Service Centers</p>
                 </div>
-                <div className="text-center p-4 bg-white/5 rounded-lg">
-                  <MapPin className="w-8 h-8 text-yellow-500 mx-auto mb-2" />
-                  <p className="text-2xl font-bold">100+</p>
-                  <p className="text-sm text-gray-400">Cities Covered</p>
+                <div className="text-center p-3 sm:p-4 bg-white/5 rounded-lg">
+                  <MapPin className="w-6 sm:w-8 h-6 sm:h-8 text-yellow-500 mx-auto mb-1 sm:mb-2" />
+                  <p className="text-xl sm:text-2xl font-bold">100+</p>
+                  <p className="text-xs sm:text-sm text-gray-400">Cities Covered</p>
                 </div>
-                <div className="text-center p-4 bg-white/5 rounded-lg">
-                  <Globe className="w-8 h-8 text-purple-500 mx-auto mb-2" />
-                  <p className="text-2xl font-bold">15+</p>
-                  <p className="text-sm text-gray-400">States Present</p>
+                <div className="text-center p-3 sm:p-4 bg-white/5 rounded-lg">
+                  <Globe className="w-6 sm:w-8 h-6 sm:h-8 text-purple-500 mx-auto mb-1 sm:mb-2" />
+                  <p className="text-xl sm:text-2xl font-bold">15+</p>
+                  <p className="text-xs sm:text-sm text-gray-400">States Present</p>
                 </div>
               </div>
             </motion.div>
