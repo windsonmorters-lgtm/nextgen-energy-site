@@ -55,7 +55,7 @@ function App() {
           
           {/* Contact QR - Bottom */}
           <div className="flex flex-col items-center gap-1">
-            <span className="text-xs text-gray-600 bg-white/90 px-2 py-1 rounded shadow font-medium">Contact</span>
+            <span className="text-xs text-gray-600 bg-white/90 px-2 py-1 rounded shadow font-medium">V-Chat</span>
             <img 
               src="/qr contact.jpeg" 
               alt="Contact QR Code" 

@@ -15,7 +15,7 @@ export default function Footer() {
                 NAXEN EXIM INDIA
               </span>
               <span className="text-sm text-accent-cyan font-semibold tracking-widest uppercase" style={{ fontFamily: 'fangsong', letterSpacing: '0.2em' }}>
-                एक शर्तिया इलाज
+                शर्तिया इलाज
               </span>
             </div>
             <p className="text-xs sm:text-sm text-gray-400 mb-4">

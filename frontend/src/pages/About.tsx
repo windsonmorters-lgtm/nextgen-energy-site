@@ -5,7 +5,7 @@ import { Target, Users, Award, Factory } from 'lucide-react'
 export default function About() {
   const leadership = [
     { name: 'Mr. Narottam Agarwal', title: 'Chairman & Managing Director', bio: '25+ years in energy storage and EV manufacturing' },
-    { name: 'Ms. Manya Agarwal', title: 'Chief Financial Officer', bio: 'Former Big-4 finance leader, NSE SME listing specialist' },
+    { name: 'Mrs. Manya Agarwal', title: 'Chief Financial Officer', bio: 'Former Big-4 finance leader, NSE SME listing specialist' },
     { name: 'Mr. Manmeet Singh', title: 'Chief Technology Officer', bio: 'Battery R&D pioneer with 15+ patents in BMS technology' },
     { name: 'Mr. Pawan Rajpoot', title: 'Head of Operations', bio: 'Scaled production from 2K to 12.5K packs/month' },
   ]
@@ -85,9 +85,9 @@ export default function About() {
         >
           <div className="grid md:grid-cols-3 gap-8 text-center">
             {[
-              { icon: Factory, label: '55K sq. ft.', desc: 'Manufacturing facility' },
-              { icon: Users, label: '500+', desc: 'Team members' },
-              { icon: Award, label: '4+', desc: 'Industry certifications' },
+              { icon: Factory, label: '5000 sq. ft.', desc: 'Manufacturing facility' },
+              { icon: Users, label: '20+ Team Members', desc: 'Team members' },
+              { icon: Award, label: '10+', desc: 'Industry certifications' },
             ].map((stat, idx) => (
               <motion.div
                 key={idx}
