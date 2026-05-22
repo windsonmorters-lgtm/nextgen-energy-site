@@ -54,7 +54,7 @@ export default function CustomerSupport() {
             {[
               { icon: Phone, title: 'Phone', content: '+91 +91 7625888880', subtext: 'Mon-Sat, 9AM-6PM IST' },
               { icon: Mail, title: 'Email', content: 'info@Naxen Exim Indiaenergy.com', subtext: 'Response within 24 hours' },
-              { icon: MessageCircle, title: 'WhatsApp', content: '+91 98765-43210', subtext: 'Instant messaging support' },
+              { icon: MessageCircle, title: 'WhatsApp', content: '+91 76', subtext: 'Instant messaging support' },
               { icon: Clock, title: 'Working Hours', content: 'Mon-Sat: 9AM-6PM', subtext: 'Sunday: Closed' },
             ].map((item, idx) => (
               <motion.div
