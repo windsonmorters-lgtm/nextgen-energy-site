@@ -25,14 +25,14 @@ export default function Navbar() {
     <div className="fixed top-0 w-full z-50">
       {/* Top Bar - Logo, Search, Contact */}
       <nav className="bg-slate-950 border-b border-slate-800">
-        <div className="max-w-7xl mx-auto pr-2 sm:pr-4 pl-0">
-          <div className="flex items-center justify-between h-16 gap-2 sm:gap-4">
-            {/* Logo - Extreme left edge */}
-            <Link to="/" className="flex items-center gap-2 sm:gap-3 flex-shrink-0 -ml-6">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4">
+          <div className="flex items-center justify-between h-14 sm:h-16 gap-2">
+            {/* Logo */}
+            <Link to="/" className="flex items-center gap-2 flex-shrink-0">
               <img 
                 src="/logoo.png" 
                 alt="NAXEN EXIM INDIA" 
-                className="h-14 w-auto object-contain rounded-lg"
+                className="h-10 sm:h-12 w-auto object-contain"
               />
             </Link>
 
@@ -49,8 +49,18 @@ export default function Navbar() {
             </div>
 
             {/* Right Side Actions */}
-            <div className="flex items-center gap-2 sm:gap-4">
-              <a href="tel:+911204291595" className="hidden lg:flex items-center gap-2 text-gray-300 hover:text-accent-green transition">
+            <div className="flex items-center gap-2">
+              {/* Mobile Menu Button */}
+              <button 
+                onClick={() => setIsOpen(!isOpen)} 
+                className="lg:hidden text-gray-200 p-2 hover:bg-slate-800 rounded-lg transition"
+                aria-label="Toggle menu"
+              >
+                {isOpen ? <X size={20} /> : <Menu size={20} />}
+              </button>
+              
+              {/* Desktop Actions */}
+              <a href="tel:+91-7625888880" className="hidden lg:flex items-center gap-2 text-gray-300 hover:text-accent-green transition">
                 <Phone className="w-4 h-4" />
                 <span className="text-sm">+91 7625888880</span>
               </a>
@@ -60,36 +70,31 @@ export default function Navbar() {
               </Link>
               <Link
                 to="/contact"
-                className="px-3 sm:px-4 py-2 bg-gradient-to-r from-accent-green to-accent-cyan text-slate-950 text-sm font-semibold rounded-lg hover:shadow-lg transition"
+                className="hidden sm:flex px-4 py-2 bg-gradient-to-r from-accent-green to-accent-cyan text-slate-950 text-sm font-semibold rounded-lg hover:shadow-lg transition"
               >
-                <span className="hidden sm:inline">Get Quote</span>
-                <span className="sm:hidden">Quote</span>
+                Get Quote
               </Link>
             </div>
-
-            {/* Mobile Menu Button */}
-            <button onClick={() => setIsOpen(!isOpen)} className="lg:hidden text-gray-200 p-1">
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
           </div>
         </div>
       </nav>
 
       {/* Navigation Bar - Enhanced Visibility */}
+      {/* Desktop Navigation Bar */}
       <nav className="hidden lg:block bg-slate-900 border-b border-slate-800">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="flex items-center justify-center h-14 gap-2">
+          <div className="flex items-center justify-center h-12 gap-1">
             {mainLinks.map((link) => (
               <Link
                 key={link.label}
                 to={link.path}
-                className={`flex items-center gap-2 px-5 py-2.5 rounded-xl transition-all duration-200 font-semibold text-base tracking-wide ${
+                className={`flex items-center gap-1.5 px-3 py-2 rounded-lg transition-all duration-200 font-medium text-sm ${
                   isActive(link.path) 
-                    ? 'bg-gradient-to-r from-accent-green to-accent-cyan text-slate-950 shadow-lg shadow-accent-green/30 scale-105' 
-                    : 'text-gray-200 hover:bg-slate-800 hover:text-white hover:scale-105'
+                    ? 'bg-gradient-to-r from-accent-green to-accent-cyan text-slate-950 shadow-md' 
+                    : 'text-gray-300 hover:bg-slate-800 hover:text-white'
                 }`}
               >
-                <span className="text-lg">{link.icon}</span>
+                <span className="text-base">{link.icon}</span>
                 <span>{link.label}</span>
               </Link>
             ))}
@@ -119,31 +124,34 @@ export default function Navbar() {
             </div>
 
             {/* Mobile Navigation Links */}
-            <div className="p-4">
-              <p className="text-xs text-gray-500 uppercase font-semibold mb-4">Menu</p>
+            <div className="p-3">
               {mainLinks.map((link) => (
                 <Link
                   key={link.label}
                   to={link.path}
                   onClick={() => setIsOpen(false)}
-                  className={`flex items-center gap-3 text-lg font-semibold py-3 px-3 rounded-xl transition-all ${
+                  className={`flex items-center gap-3 text-base font-semibold py-2.5 px-3 rounded-lg transition-all ${
                     isActive(link.path)
                       ? 'bg-gradient-to-r from-accent-green to-accent-cyan text-slate-950'
                       : 'text-white hover:bg-slate-800 hover:text-accent-green'
                   }`}
                 >
-                  <span className="text-xl">{link.icon}</span>
+                  <span className="text-lg">{link.icon}</span>
                   {link.label}
                 </Link>
               ))}
             </div>
 
-            {/* Mobile CTA */}
-            <div className="p-4 border-t border-slate-800">
+            {/* Mobile Contact Info */}
+            <div className="p-3 border-t border-slate-800">
+              <a href="tel:+91-7625888880" className="flex items-center gap-2 text-gray-300 py-2">
+                <Phone className="w-4 h-4" />
+                <span className="text-sm">+91 7625888880</span>
+              </a>
               <Link
                 to="/contact"
                 onClick={() => setIsOpen(false)}
-                className="block w-full py-3 bg-gradient-to-r from-accent-green to-accent-cyan text-slate-950 font-semibold rounded-lg text-center"
+                className="block w-full mt-2 py-2.5 bg-gradient-to-r from-accent-green to-accent-cyan text-slate-950 font-semibold rounded-lg text-center text-sm"
               >
                 Get a Quote
               </Link>
