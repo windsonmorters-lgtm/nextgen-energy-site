@@ -1,10 +1,10 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { 
-  Search, ShoppingCart, Filter, Phone, Heart, 
+  Search, ShoppingCart, Filter, Phone, Mail, Heart, Battery, Armchair, Car,
   Truck, Shield, RotateCcw, X, Plus, Minus, Trash2, CreditCard, 
-  MapPin, User, Star, Package, CheckCircle, ChevronLeft, ChevronRight
+  MapPin, User, Star, Package, CheckCircle, ChevronLeft, ArrowRight
 } from 'lucide-react'
 
 // Extended Product data with more details
@@ -294,49 +294,7 @@ export default function Products() {
     }, 3000)
   }
 
-  // Hero carousel slides
-  const heroSlides = [
-    {
-      id: 1,
-      title: 'Battery Operated',
-      subtitle: 'BIKE RIDE ON',
-      description: 'Premium electric bikes for kids with realistic design and safety features',
-      cta: 'Shop Now',
-      bgGradient: 'from-blue-600 to-purple-600',
-      tag: 'New Collection'
-    },
-    {
-      id: 2,
-      title: 'Baby Tricycles',
-      subtitle: 'SAFE & STURDY',
-      description: 'Adjustable parent handle, safety belt, and storage basket included',
-      cta: 'Explore',
-      bgGradient: 'from-green-500 to-teal-500',
-      tag: 'Best Seller'
-    },
-    {
-      id: 3,
-      title: 'Kids Furniture',
-      subtitle: 'STUDY & STORAGE',
-      description: 'Ergonomic study tables and colorful storage solutions for kids',
-      cta: 'View All',
-      bgGradient: 'from-orange-500 to-red-500',
-      tag: 'Popular'
-    }
-  ]
-
-  const [currentSlide, setCurrentSlide] = useState(0)
-
-  // Auto-rotate carousel
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % heroSlides.length)
-    }, 5000)
-    return () => clearInterval(interval)
-  }, [heroSlides.length])
-
-  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % heroSlides.length)
-  const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length)
+  const [activeSection, setActiveSection] = useState<'home' | 'toys' | 'batteries' | 'appliance' | 'ev-services'>('home')
 
   return (
     <div className="pt-28 sm:pt-32 min-h-screen bg-gray-50">
@@ -385,114 +343,143 @@ export default function Products() {
         </div>
       </div>
 
-      {/* Hero Carousel */}
-      <div className="relative bg-gray-100 overflow-hidden">
-        <div 
-          className="flex transition-transform duration-500 ease-out"
-          style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-        >
-          {heroSlides.map((slide) => (
-            <div 
-              key={slide.id}
-              className={`w-full flex-shrink-0 bg-gradient-to-r ${slide.bgGradient} relative`}
-            >
-              <div className="max-w-7xl mx-auto px-4 py-8 sm:py-12 md:py-16">
-                <div className="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-12">
-                  {/* Left Content */}
-                  <div className="flex-1 text-center md:text-left text-white">
-                    <span className="inline-block px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-xs sm:text-sm font-medium mb-3">
-                      {slide.tag}
-                    </span>
-                    <h2 className="text-xl sm:text-2xl md:text-3xl font-medium mb-1">
-                      {slide.title}
-                    </h2>
-                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 tracking-tight">
-                      {slide.subtitle}
-                    </h1>
-                    <p className="text-sm sm:text-base md:text-lg text-white/90 mb-6 max-w-lg">
-                      {slide.description}
-                    </p>
-                    <button 
-                      onClick={() => setSelectedCategory('all')}
-                      className="px-6 sm:px-8 py-2.5 sm:py-3 bg-white text-gray-900 font-bold rounded-xl hover:shadow-2xl hover:scale-105 transition-all text-sm sm:text-base"
-                    >
-                      {slide.cta}
-                    </button>
-                  </div>
-                  
-                  {/* Right Image Placeholder */}
-                  <div className="flex-1 flex justify-center md:justify-end">
-                    <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80">
-                      <div className="absolute inset-0 bg-white/10 backdrop-blur-sm rounded-3xl transform rotate-6" />
-                      <div className="absolute inset-0 bg-white/20 backdrop-blur-sm rounded-3xl transform -rotate-3" />
-                      <div className="relative w-full h-full bg-white/30 backdrop-blur-md rounded-3xl border-2 border-white/40 flex items-center justify-center shadow-2xl">
-                        <div className="text-center text-white/80">
-                          <ShoppingCart className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-2 opacity-60" />
-                          <span className="text-xs sm:text-sm font-medium">{slide.title}</span>
-                        </div>
-                      </div>
-                    </div>
+      {/* Main Content Area */}
+      {activeSection === 'home' ? (
+        <>
+          {/* Category Selection Cards */}
+          <div className="max-w-7xl mx-auto px-4 py-8 sm:py-12">
+            <div className="text-center mb-8 sm:mb-12">
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">Our Product Categories</h2>
+              <p className="text-gray-600">Choose a category to explore our products</p>
+            </div>
+            
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+              {/* Toy Products Card */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0 }}
+                onClick={() => setActiveSection('toys')}
+                className="group bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer"
+              >
+                <div className="h-32 sm:h-40 bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center">
+                  <ShoppingCart className="w-12 h-12 sm:w-16 sm:h-16 text-white/80 group-hover:scale-110 transition-transform" />
+                </div>
+                <div className="p-4 sm:p-6">
+                  <h3 className="font-bold text-gray-900 text-base sm:text-lg mb-1">Toy Products</h3>
+                  <p className="text-xs sm:text-sm text-gray-500 mb-3">Tricycles, Ride-ons, Swings & more</p>
+                  <div className="flex items-center text-blue-600 font-semibold text-sm">
+                    <span>Explore</span>
+                    <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
                   </div>
                 </div>
+              </motion.div>
+
+              {/* Batteries Card */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 }}
+                onClick={() => setActiveSection('batteries')}
+                className="group bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer"
+              >
+                <div className="h-32 sm:h-40 bg-gradient-to-br from-green-500 to-teal-500 flex items-center justify-center">
+                  <Battery className="w-12 h-12 sm:w-16 sm:h-16 text-white/80 group-hover:scale-110 transition-transform" />
+                </div>
+                <div className="p-4 sm:p-6">
+                  <h3 className="font-bold text-gray-900 text-base sm:text-lg mb-1">Batteries</h3>
+                  <p className="text-xs sm:text-sm text-gray-500 mb-3">SMF, Tubular, Solar & EV Batteries</p>
+                  <div className="flex items-center text-green-600 font-semibold text-sm">
+                    <span>Explore</span>
+                    <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Appliance Card */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+                onClick={() => setActiveSection('appliance')}
+                className="group bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer"
+              >
+                <div className="h-32 sm:h-40 bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center">
+                  <Armchair className="w-12 h-12 sm:w-16 sm:h-16 text-white/80 group-hover:scale-110 transition-transform" />
+                </div>
+                <div className="p-4 sm:p-6">
+                  <h3 className="font-bold text-gray-900 text-base sm:text-lg mb-1">Appliance</h3>
+                  <p className="text-xs sm:text-sm text-gray-500 mb-3">Home & Kitchen Appliances</p>
+                  <div className="flex items-center text-orange-600 font-semibold text-sm">
+                    <span>Explore</span>
+                    <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* EV Services Card */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+                onClick={() => setActiveSection('ev-services')}
+                className="group bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer"
+              >
+                <div className="h-32 sm:h-40 bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center">
+                  <Car className="w-12 h-12 sm:w-16 sm:h-16 text-white/80 group-hover:scale-110 transition-transform" />
+                </div>
+                <div className="p-4 sm:p-6">
+                  <h3 className="font-bold text-gray-900 text-base sm:text-lg mb-1">EV Services</h3>
+                  <p className="text-xs sm:text-sm text-gray-500 mb-3">Electric Vehicle Solutions</p>
+                  <div className="flex items-center text-cyan-600 font-semibold text-sm">
+                    <span>Explore</span>
+                    <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </>
+      ) : activeSection === 'toys' ? (
+        <>
+          {/* Back Button & Section Title */}
+          <div className="bg-white border-b border-gray-200">
+            <div className="max-w-7xl mx-auto px-4 py-4">
+              <button
+                onClick={() => setActiveSection('home')}
+                className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors mb-3"
+              >
+                <ChevronLeft className="w-5 h-5" />
+                <span>Back to Categories</span>
+              </button>
+              <h2 className="text-xl sm:text-2xl font-bold text-gray-900">Toy Products</h2>
+            </div>
+          </div>
+
+          {/* Categories Filter */}
+          <div className="bg-white border-b border-gray-200">
+            <div className="max-w-7xl mx-auto px-4 py-3">
+              <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-hide">
+                <Filter className="w-4 h-4 text-gray-400 flex-shrink-0" />
+                {categories.map((category) => (
+                  <button
+                    key={category.id}
+                    onClick={() => setSelectedCategory(category.id)}
+                    className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-all ${
+                      selectedCategory === category.id
+                        ? 'bg-blue-500 text-white shadow-md'
+                        : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                    }`}
+                  >
+                    {category.name}
+                    <span className={`ml-2 text-xs ${selectedCategory === category.id ? 'text-blue-100' : 'text-gray-400'}`}>
+                      ({category.count})
+                    </span>
+                  </button>
+                ))}
               </div>
             </div>
-          ))}
-        </div>
-
-        {/* Navigation Arrows */}
-        <button 
-          onClick={prevSlide}
-          className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 p-2 sm:p-3 bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white rounded-full transition-all hover:scale-110"
-        >
-          <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
-        </button>
-        <button 
-          onClick={nextSlide}
-          className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 p-2 sm:p-3 bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white rounded-full transition-all hover:scale-110"
-        >
-          <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
-        </button>
-
-        {/* Dot Indicators */}
-        <div className="absolute bottom-3 sm:bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5 sm:gap-2">
-          {heroSlides.map((_, idx) => (
-            <button
-              key={idx}
-              onClick={() => setCurrentSlide(idx)}
-              className={`w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full transition-all ${
-                idx === currentSlide 
-                  ? 'bg-white w-5 sm:w-6' 
-                  : 'bg-white/50 hover:bg-white/70'
-              }`}
-            />
-          ))}
-        </div>
-      </div>
-
-      {/* Categories */}
-      <div className="bg-white border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 py-3">
-          <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-hide">
-            <Filter className="w-4 h-4 text-gray-400 flex-shrink-0" />
-            {categories.map((category) => (
-              <button
-                key={category.id}
-                onClick={() => setSelectedCategory(category.id)}
-                className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-all ${
-                  selectedCategory === category.id
-                    ? 'bg-blue-500 text-white shadow-md'
-                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-                }`}
-              >
-                {category.name}
-                <span className={`ml-2 text-xs ${selectedCategory === category.id ? 'text-blue-100' : 'text-gray-400'}`}>
-                  ({category.count})
-                </span>
-              </button>
-            ))}
           </div>
-        </div>
-      </div>
 
       {/* Products Grid */}
       <div className="max-w-7xl mx-auto px-4 py-6">
@@ -679,6 +666,147 @@ export default function Products() {
           </div>
         )}
       </div>
+
+        </>
+      ) : activeSection === 'batteries' ? (
+        <>
+          {/* Batteries Section - Devi Batteries Content */}
+          <div className="bg-white border-b border-gray-200">
+            <div className="max-w-7xl mx-auto px-4 py-4">
+              <button
+                onClick={() => setActiveSection('home')}
+                className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors mb-3"
+              >
+                <ChevronLeft className="w-5 h-5" />
+                <span>Back to Categories</span>
+              </button>
+              <h2 className="text-xl sm:text-2xl font-bold text-gray-900">Batteries</h2>
+            </div>
+          </div>
+
+          {/* Devi Batteries Content (from EServices) */}
+          <div className="pt-4">
+            {/* Header */}
+            <section className="bg-gradient-to-r from-slate-950 to-slate-900 text-white py-10 sm:py-16">
+              <div className="max-w-7xl mx-auto px-4 text-center">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4">Devi Batteries</h1>
+                <p className="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto px-2">
+                  Premium quality batteries for all your power needs
+                </p>
+              </div>
+            </section>
+
+            {/* Single Product Display */}
+            <section className="py-8 sm:py-16 bg-slate-50">
+              <div className="max-w-4xl mx-auto px-3 sm:px-4">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="bg-white rounded-2xl overflow-hidden shadow-xl border border-slate-200"
+                >
+                  {/* Product Image */}
+                  <div className="bg-white p-4 sm:p-8 flex items-center justify-center">
+                    <img
+                      src="/DEVI BATTERIES.png"
+                      alt="Devi Batteries"
+                      className="max-h-48 sm:max-h-64 w-auto object-contain"
+                    />
+                  </div>
+
+                  {/* Product Info */}
+                  <div className="p-4 sm:p-8">
+                    <h2 className="text-2xl sm:text-3xl font-bold text-slate-950 mb-3 sm:mb-4">Devi Batteries</h2>
+                    <p className="text-gray-600 mb-4 sm:mb-6 text-base sm:text-lg">
+                      High-performance lithium-ion batteries designed for reliability and long-lasting power. 
+                      Perfect for various applications including electric vehicles, solar systems, and energy storage.
+                    </p>
+
+                    {/* Key Features */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-6 sm:mb-8">
+                      {[
+                        'Long battery life',
+                        'Fast charging capability',
+                        'High energy density',
+                        'Low self-discharge',
+                        'Maintenance-free',
+                        'Environmentally friendly',
+                        'Wide temperature range',
+                        'Safety certified'
+                      ].map((feature, index) => (
+                        <div key={index} className="flex items-center gap-2">
+                          <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
+                          <span className="text-gray-700 text-sm sm:text-base">{feature}</span>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Contact Info */}
+                    <div className="bg-slate-50 p-4 sm:p-6 rounded-xl border border-slate-200">
+                      <h3 className="font-semibold text-slate-950 mb-3 sm:mb-4 text-base sm:text-lg">For Inquiries & Orders</h3>
+                      <div className="space-y-2">
+                        <a href="tel:+91-7625888880" className="flex items-center gap-2 text-blue-600 hover:text-blue-700 text-sm sm:text-base">
+                          <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
+                          <span>+91-7625888880</span>
+                        </a>
+                        <a href="mailto:contact@naxenexim.com" className="flex items-center gap-2 text-blue-600 hover:text-blue-700 text-sm sm:text-base">
+                          <Mail className="w-4 h-4 sm:w-5 sm:h-5" />
+                          <span>contact@naxenexim.com</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+            </section>
+          </div>
+        </>
+      ) : activeSection === 'appliance' ? (
+        <>
+          {/* Appliance Section - Empty */}
+          <div className="bg-white border-b border-gray-200">
+            <div className="max-w-7xl mx-auto px-4 py-4">
+              <button
+                onClick={() => setActiveSection('home')}
+                className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors mb-3"
+              >
+                <ChevronLeft className="w-5 h-5" />
+                <span>Back to Categories</span>
+              </button>
+              <h2 className="text-xl sm:text-2xl font-bold text-gray-900">Appliances</h2>
+            </div>
+          </div>
+          <div className="max-w-7xl mx-auto px-4 py-20 text-center">
+            <div className="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Armchair className="w-12 h-12 text-gray-400" />
+            </div>
+            <h3 className="text-xl font-semibold text-gray-900 mb-2">Coming Soon</h3>
+            <p className="text-gray-500">Appliances section will be available shortly.</p>
+          </div>
+        </>
+      ) : (
+        <>
+          {/* EV Services Section - Empty */}
+          <div className="bg-white border-b border-gray-200">
+            <div className="max-w-7xl mx-auto px-4 py-4">
+              <button
+                onClick={() => setActiveSection('home')}
+                className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors mb-3"
+              >
+                <ChevronLeft className="w-5 h-5" />
+                <span>Back to Categories</span>
+              </button>
+              <h2 className="text-xl sm:text-2xl font-bold text-gray-900">EV Services</h2>
+            </div>
+          </div>
+          <div className="max-w-7xl mx-auto px-4 py-20 text-center">
+            <div className="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Car className="w-12 h-12 text-gray-400" />
+            </div>
+            <h3 className="text-xl font-semibold text-gray-900 mb-2">Coming Soon</h3>
+            <p className="text-gray-500">EV Services section will be available shortly.</p>
+          </div>
+        </>
+      )}
 
       {/* Trust Badges */}
       <div className="bg-white border-t border-gray-200 mt-8">
