@@ -315,18 +315,8 @@ export default function Products() {
               </div>
             </div>
 
-            {/* Search & Cart */}
-            <div className="flex items-center gap-3 w-full sm:w-auto">
-              <div className="relative flex-1 sm:flex-none sm:w-80">
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
-                <input
-                  type="text"
-                  placeholder="Search products, categories..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-10 pr-4 py-2.5 bg-gray-100 border-0 rounded-xl text-sm focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all"
-                />
-              </div>
+            {/* Cart */}
+            <div className="flex items-center">
               <button 
                 onClick={() => setIsCartOpen(true)}
                 className="relative p-2.5 bg-gray-100 rounded-xl hover:bg-gray-200 transition-colors"
