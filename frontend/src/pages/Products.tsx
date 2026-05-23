@@ -295,9 +295,9 @@ export default function Products() {
   }
 
   return (
-    <div className="pt-16 min-h-screen bg-gray-50">
+    <div className="pt-28 sm:pt-32 min-h-screen bg-gray-50">
       {/* Header */}
-      <div className="bg-white border-b border-gray-200 sticky top-16 z-30">
+      <div className="bg-white border-b border-gray-200 sticky top-14 sm:top-28 z-30">
         <div className="max-w-7xl mx-auto px-4 py-4">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             {/* Logo & Title */}
