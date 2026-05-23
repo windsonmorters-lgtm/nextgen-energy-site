@@ -446,6 +446,51 @@ export default function Products() {
             </div>
           </div>
 
+          {/* Hero Carousel */}
+          <div className="relative bg-gray-100 overflow-hidden">
+            <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-500">
+              <div className="max-w-7xl mx-auto px-4 py-8 sm:py-12 md:py-16">
+                <div className="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-12">
+                  {/* Left Content */}
+                  <div className="flex-1 text-center md:text-left text-white">
+                    <span className="inline-block px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-xs sm:text-sm font-medium mb-3">
+                      New Collection
+                    </span>
+                    <h2 className="text-xl sm:text-2xl md:text-3xl font-medium mb-1">
+                      Battery Operated
+                    </h2>
+                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 tracking-tight">
+                      BIKE RIDE ON
+                    </h1>
+                    <p className="text-sm sm:text-base md:text-lg text-white/90 mb-6 max-w-lg">
+                      Premium electric bikes for kids with realistic design and safety features. Perfect for ages 3-8.
+                    </p>
+                    <button 
+                      onClick={() => setSelectedCategory('Ride-Ons')}
+                      className="px-6 sm:px-8 py-2.5 sm:py-3 bg-white text-gray-900 font-bold rounded-xl hover:shadow-2xl hover:scale-105 transition-all text-sm sm:text-base"
+                    >
+                      Shop Now
+                    </button>
+                  </div>
+                  
+                  {/* Right Image Placeholder */}
+                  <div className="flex-1 flex justify-center md:justify-end">
+                    <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80">
+                      <div className="absolute inset-0 bg-white/10 backdrop-blur-sm rounded-3xl transform rotate-6" />
+                      <div className="absolute inset-0 bg-white/20 backdrop-blur-sm rounded-3xl transform -rotate-3" />
+                      <div className="relative w-full h-full bg-white/30 backdrop-blur-md rounded-3xl border-2 border-white/40 flex items-center justify-center shadow-2xl">
+                        <div className="text-center text-white/80">
+                          <ShoppingCart className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-2 opacity-60" />
+                          <span className="text-xs sm:text-sm font-medium">Ride-On Collection</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
           {/* Categories Filter */}
           <div className="bg-white border-b border-gray-200">
             <div className="max-w-7xl mx-auto px-4 py-3">
