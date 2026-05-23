@@ -1,97 +1,222 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
-import { Search, ShoppingCart, Filter, Phone, MessageCircle, Battery, Zap, Star } from 'lucide-react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { 
+  Search, ShoppingCart, Filter, Phone, Heart, 
+  Truck, Shield, RotateCcw, X, Plus, Minus, Trash2, CreditCard, 
+  MapPin, User, Star, Package, CheckCircle 
+} from 'lucide-react'
 
-// Product data - Devi Batteries variants
+// Extended Product data with more details
 const products = [
   {
     id: 1,
-    name: 'Devi Battery 12V 7Ah',
-    sku: 'DB-12V7AH',
-    price: 1250,
-    mrp: 1450,
-    image: '/DEVI BATTERIES.png',
-    category: 'SMF Battery',
+    name: 'Baby Tricycle with Parent Handle',
+    sku: 'TRI-001',
+    price: 1850,
+    mrp: 2450,
+    image: '/product-placeholder.png',
+    category: 'Tricycles',
     tags: ['Best Seller', 'In Stock'],
-    specs: { voltage: '12V', capacity: '7Ah', warranty: '1 Year' },
-    description: 'Sealed Maintenance Free battery for UPS, inverters, and emergency lighting systems.'
+    rating: 4.5,
+    reviews: 128,
+    description: 'Sturdy baby tricycle with adjustable parent handle, safety belt, and storage basket. Perfect for kids aged 2-5 years.',
+    features: ['Parent Control Handle', 'Safety Belt', 'Storage Basket', 'Adjustable Seat'],
+    stock: 15
   },
   {
     id: 2,
-    name: 'Devi Battery 12V 12Ah',
-    sku: 'DB-12V12AH',
-    price: 1850,
-    mrp: 2100,
-    image: '/DEVI BATTERIES.png',
-    category: 'SMF Battery',
-    tags: ['Popular', 'In Stock'],
-    specs: { voltage: '12V', capacity: '12Ah', warranty: '1 Year' },
-    description: 'High-capacity SMF battery perfect for e-bikes, scooters, and solar applications.'
+    name: 'Kids Electric Ride-On Jeep',
+    sku: 'JEEP-002',
+    price: 8500,
+    mrp: 12000,
+    image: '/product-placeholder.png',
+    category: 'Ride-Ons',
+    tags: ['Hot Selling', 'Limited Stock'],
+    rating: 4.8,
+    reviews: 89,
+    description: 'Battery operated kids jeep with remote control, LED lights, music, and realistic design. Ages 3-8.',
+    features: ['Remote Control', 'LED Lights', 'Music Player', '2 Speed Modes'],
+    stock: 8
   },
   {
     id: 3,
-    name: 'Devi Battery 12V 26Ah',
-    sku: 'DB-12V26AH',
-    price: 3250,
-    mrp: 3800,
-    image: '/DEVI BATTERIES.png',
-    category: 'Tubular Battery',
-    tags: ['New Arrival', 'In Stock'],
-    specs: { voltage: '12V', capacity: '26Ah', warranty: '2 Years' },
-    description: 'Deep cycle tubular battery for solar power systems and electric vehicles.'
+    name: 'Baby Walker with Music',
+    sku: 'WLK-003',
+    price: 1250,
+    mrp: 1650,
+    image: '/product-placeholder.png',
+    category: 'Walkers',
+    tags: ['Popular', 'In Stock'],
+    rating: 4.3,
+    reviews: 256,
+    description: 'Adjustable height baby walker with musical toys, anti-fall brakes, and cushioned seat.',
+    features: ['Musical Toys', 'Anti-fall Brakes', 'Adjustable Height', 'Cushioned Seat'],
+    stock: 25
   },
   {
     id: 4,
-    name: 'Devi Battery 12V 42Ah',
-    sku: 'DB-12V42AH',
-    price: 4850,
-    mrp: 5600,
-    image: '/DEVI BATTERIES.png',
-    category: 'Tubular Battery',
-    tags: ['Premium', 'In Stock'],
-    specs: { voltage: '12V', capacity: '42Ah', warranty: '2 Years' },
-    description: 'Heavy-duty battery for industrial applications, forklifts, and large UPS systems.'
+    name: 'Kids Garden Swing Set',
+    sku: 'SWG-004',
+    price: 3250,
+    mrp: 4500,
+    image: '/product-placeholder.png',
+    category: 'Swings',
+    tags: ['New Arrival', 'In Stock'],
+    rating: 4.6,
+    reviews: 67,
+    description: 'Outdoor garden swing with safety harness, sturdy frame, and weather-resistant coating.',
+    features: ['Safety Harness', 'Sturdy Frame', 'Weather Resistant', 'Easy Assembly'],
+    stock: 12
   },
   {
     id: 5,
-    name: 'Devi E-Rickshaw Battery',
-    sku: 'DB-ERICKSHAW-12V',
-    price: 8500,
-    mrp: 9800,
-    image: '/DEVI BATTERIES.png',
-    category: 'EV Battery',
-    tags: ['Hot Selling', 'Limited Stock'],
-    specs: { voltage: '12V', capacity: '100Ah', warranty: '18 Months' },
-    description: 'Specially designed for e-rickshaws with high discharge rate and long life.'
+    name: 'Children Study Table Chair',
+    sku: 'TBL-005',
+    price: 2450,
+    mrp: 3200,
+    image: '/product-placeholder.png',
+    category: 'Tables',
+    tags: ['In Stock'],
+    rating: 4.4,
+    reviews: 145,
+    description: 'Ergonomic study table and chair set with adjustable height, storage drawer, and book holder.',
+    features: ['Adjustable Height', 'Storage Drawer', 'Book Holder', 'Ergonomic Design'],
+    stock: 20
   },
   {
     id: 6,
-    name: 'Devi Solar Battery 150Ah',
-    sku: 'DB-SOLAR-150AH',
-    price: 12500,
-    mrp: 14500,
-    image: '/DEVI BATTERIES.png',
-    category: 'Solar Battery',
+    name: 'Baby Stroller Pram',
+    sku: 'STR-006',
+    price: 4250,
+    mrp: 5500,
+    image: '/product-placeholder.png',
+    category: 'Strollers',
+    tags: ['Premium', 'In Stock'],
+    rating: 4.7,
+    reviews: 312,
+    description: 'Lightweight foldable baby stroller with canopy, storage basket, and 360° swivel wheels.',
+    features: ['One-Hand Fold', 'Canopy', 'Storage Basket', '360° Wheels'],
+    stock: 18
+  },
+  {
+    id: 7,
+    name: 'Kids Plastic Almirah',
+    sku: 'ALM-007',
+    price: 2850,
+    mrp: 3800,
+    image: '/product-placeholder.png',
+    category: 'Storage',
+    tags: ['In Stock'],
+    rating: 4.2,
+    reviews: 98,
+    description: 'Colorful kids wardrobe with multiple shelves, lockable doors, and easy assembly.',
+    features: ['Multiple Shelves', 'Lockable Doors', 'Easy Assembly', 'Colorful Design'],
+    stock: 30
+  },
+  {
+    id: 8,
+    name: 'Baby Potty Training Seat',
+    sku: 'PTY-008',
+    price: 450,
+    mrp: 650,
+    image: '/product-placeholder.png',
+    category: 'Essentials',
     tags: ['Best Value', 'In Stock'],
-    specs: { voltage: '12V', capacity: '150Ah', warranty: '3 Years' },
-    description: 'Deep discharge solar battery with excellent charge acceptance and low self-discharge.'
+    rating: 4.5,
+    reviews: 423,
+    description: 'Comfortable potty seat with backrest, anti-slip base, and easy to clean design.',
+    features: ['Backrest', 'Anti-slip Base', 'Easy Clean', 'Portable'],
+    stock: 50
+  },
+  {
+    id: 9,
+    name: 'Kids Magic Car',
+    sku: 'CAR-009',
+    price: 1650,
+    mrp: 2250,
+    image: '/product-placeholder.png',
+    category: 'Ride-Ons',
+    tags: ['Popular', 'In Stock'],
+    rating: 4.4,
+    reviews: 189,
+    description: 'Twist and swing magic car with LED wheels, music, and 360° rotation.',
+    features: ['LED Wheels', 'Music', '360° Rotation', 'No Pedals Needed'],
+    stock: 22
+  },
+  {
+    id: 10,
+    name: 'Baby Bather Set',
+    sku: 'BTH-010',
+    price: 750,
+    mrp: 950,
+    image: '/product-placeholder.png',
+    category: 'Essentials',
+    tags: ['In Stock'],
+    rating: 4.6,
+    reviews: 234,
+    description: 'Soft cushioned baby bather with anti-slip base and quick-dry mesh fabric.',
+    features: ['Soft Cushion', 'Anti-slip Base', 'Quick Dry', 'Foldable'],
+    stock: 35
+  },
+  {
+    id: 11,
+    name: 'Kids Slide for Garden',
+    sku: 'SLD-011',
+    price: 3850,
+    mrp: 5200,
+    image: '/product-placeholder.png',
+    category: 'Outdoor',
+    tags: ['Hot Selling', 'In Stock'],
+    rating: 4.7,
+    reviews: 76,
+    description: 'Durable plastic slide with ladder, safety rails, and UV-resistant material.',
+    features: ['Safety Rails', 'UV Resistant', 'Ladder Included', 'Indoor/Outdoor'],
+    stock: 10
+  },
+  {
+    id: 12,
+    name: 'Baby Feeding High Chair',
+    sku: 'FED-012',
+    price: 2250,
+    mrp: 2950,
+    image: '/product-placeholder.png',
+    category: 'Essentials',
+    tags: ['Best Seller', 'In Stock'],
+    rating: 4.8,
+    reviews: 567,
+    description: 'Adjustable feeding chair with removable tray, 5-point harness, and foldable design.',
+    features: ['Removable Tray', '5-Point Harness', 'Foldable', 'Adjustable Height'],
+    stock: 28
   }
 ]
 
-// Categories
 const categories = [
-  { id: 'all', name: 'All Products', count: 6 },
-  { id: 'SMF Battery', name: 'SMF Batteries', count: 2 },
-  { id: 'Tubular Battery', name: 'Tubular Batteries', count: 2 },
-  { id: 'EV Battery', name: 'EV Batteries', count: 1 },
-  { id: 'Solar Battery', name: 'Solar Batteries', count: 1 }
+  { id: 'all', name: 'All Products', count: 12 },
+  { id: 'Tricycles', name: 'Tricycles', count: 1 },
+  { id: 'Ride-Ons', name: 'Ride-Ons & Cars', count: 2 },
+  { id: 'Swings', name: 'Swings & Slides', count: 2 },
+  { id: 'Strollers', name: 'Strollers & Prams', count: 1 },
+  { id: 'Tables', name: 'Tables & Chairs', count: 1 },
+  { id: 'Storage', name: 'Storage', count: 1 },
+  { id: 'Essentials', name: 'Baby Essentials', count: 3 },
+  { id: 'Outdoor', name: 'Outdoor Play', count: 1 }
 ]
+
+interface CartItem {
+  productId: number
+  quantity: number
+}
 
 export default function Products() {
   const [selectedCategory, setSelectedCategory] = useState('all')
   const [searchQuery, setSearchQuery] = useState('')
-  const [cart, setCart] = useState<number[]>([])
+  const [cart, setCart] = useState<CartItem[]>([])
+  const [wishlist, setWishlist] = useState<number[]>([])
+  const [selectedProduct, setSelectedProduct] = useState<typeof products[0] | null>(null)
+  const [isCartOpen, setIsCartOpen] = useState(false)
+  const [showCheckout, setShowCheckout] = useState(false)
+  const [orderPlaced, setOrderPlaced] = useState(false)
 
   const filteredProducts = products.filter(product => {
     const matchesCategory = selectedCategory === 'all' || product.category === selectedCategory
@@ -100,10 +225,51 @@ export default function Products() {
     return matchesCategory && matchesSearch
   })
 
-  const addToCart = (productId: number) => {
-    if (!cart.includes(productId)) {
-      setCart([...cart, productId])
+  const addToCart = (productId: number, quantity = 1) => {
+    setCart(prev => {
+      const existing = prev.find(item => item.productId === productId)
+      if (existing) {
+        return prev.map(item => 
+          item.productId === productId 
+            ? { ...item, quantity: item.quantity + quantity }
+            : item
+        )
+      }
+      return [...prev, { productId, quantity }]
+    })
+  }
+
+  const removeFromCart = (productId: number) => {
+    setCart(prev => prev.filter(item => item.productId !== productId))
+  }
+
+  const updateQuantity = (productId: number, quantity: number) => {
+    if (quantity <= 0) {
+      removeFromCart(productId)
+      return
     }
+    setCart(prev => prev.map(item => 
+      item.productId === productId ? { ...item, quantity } : item
+    ))
+  }
+
+  const toggleWishlist = (productId: number) => {
+    if (wishlist.includes(productId)) {
+      setWishlist(wishlist.filter(id => id !== productId))
+    } else {
+      setWishlist([...wishlist, productId])
+    }
+  }
+
+  const getCartTotal = () => {
+    return cart.reduce((total, item) => {
+      const product = products.find(p => p.id === item.productId)
+      return total + (product ? product.price * item.quantity : 0)
+    }, 0)
+  }
+
+  const getCartItemCount = () => {
+    return cart.reduce((count, item) => count + item.quantity, 0)
   }
 
   const formatPrice = (price: number) => {
@@ -114,40 +280,59 @@ export default function Products() {
     }).format(price)
   }
 
+  const handleCheckout = () => {
+    setShowCheckout(true)
+  }
+
+  const placeOrder = () => {
+    setOrderPlaced(true)
+    setCart([])
+    setTimeout(() => {
+      setOrderPlaced(false)
+      setShowCheckout(false)
+      setIsCartOpen(false)
+    }, 3000)
+  }
+
   return (
     <div className="pt-16 min-h-screen bg-gray-50">
-      {/* Header Section */}
+      {/* Header */}
       <div className="bg-white border-b border-gray-200 sticky top-16 z-30">
         <div className="max-w-7xl mx-auto px-4 py-4">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             {/* Logo & Title */}
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-cyan-500 rounded-xl flex items-center justify-center shadow-lg">
-                <Battery className="w-7 h-7 text-white" />
-              </div>
+              <img 
+                src="/logoo.png" 
+                alt="NAXEN EXIM INDIA" 
+                className="w-12 h-12 object-contain rounded-lg"
+              />
               <div>
-                <h1 className="text-xl sm:text-2xl font-bold text-gray-900">Devi Batteries</h1>
-                <p className="text-sm text-gray-500">Premium Power Solutions</p>
+                <h1 className="text-xl sm:text-2xl font-bold text-gray-900">Naxen Exim India</h1>
+                <p className="text-sm text-gray-500">Premium Baby & Kids Products</p>
               </div>
             </div>
 
             {/* Search & Cart */}
             <div className="flex items-center gap-3 w-full sm:w-auto">
-              <div className="relative flex-1 sm:flex-none sm:w-72">
+              <div className="relative flex-1 sm:flex-none sm:w-80">
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                 <input
                   type="text"
-                  placeholder="Search products..."
+                  placeholder="Search products, categories..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-10 pr-4 py-2.5 bg-gray-100 border-0 rounded-xl text-sm focus:ring-2 focus:ring-green-500 focus:bg-white transition-all"
+                  className="w-full pl-10 pr-4 py-2.5 bg-gray-100 border-0 rounded-xl text-sm focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all"
                 />
               </div>
-              <button className="relative p-2.5 bg-gray-100 rounded-xl hover:bg-gray-200 transition-colors">
+              <button 
+                onClick={() => setIsCartOpen(true)}
+                className="relative p-2.5 bg-gray-100 rounded-xl hover:bg-gray-200 transition-colors"
+              >
                 <ShoppingCart className="w-5 h-5 text-gray-700" />
-                {cart.length > 0 && (
-                  <span className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 text-white text-xs rounded-full flex items-center justify-center font-medium">
-                    {cart.length}
+                {getCartItemCount() > 0 && (
+                  <span className="absolute -top-1 -right-1 w-5 h-5 bg-blue-500 text-white text-xs rounded-full flex items-center justify-center font-medium">
+                    {getCartItemCount()}
                   </span>
                 )}
               </button>
@@ -167,12 +352,12 @@ export default function Products() {
                 onClick={() => setSelectedCategory(category.id)}
                 className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-all ${
                   selectedCategory === category.id
-                    ? 'bg-green-500 text-white shadow-md'
+                    ? 'bg-blue-500 text-white shadow-md'
                     : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
                 }`}
               >
                 {category.name}
-                <span className={`ml-2 text-xs ${selectedCategory === category.id ? 'text-green-100' : 'text-gray-400'}`}>
+                <span className={`ml-2 text-xs ${selectedCategory === category.id ? 'text-blue-100' : 'text-gray-400'}`}>
                   ({category.count})
                 </span>
               </button>
@@ -187,31 +372,41 @@ export default function Products() {
           <p className="text-sm text-gray-500">
             Showing {filteredProducts.length} of {products.length} products
           </p>
+          {selectedCategory !== 'all' && (
+            <button 
+              onClick={() => setSelectedCategory('all')}
+              className="text-sm text-blue-500 hover:text-blue-600"
+            >
+              Clear Filter
+            </button>
+          )}
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
           {filteredProducts.map((product, idx) => (
             <motion.div
               key={product.id}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: idx * 0.05 }}
-              className="group bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-xl transition-all duration-300"
+              transition={{ delay: idx * 0.03 }}
+              className="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-lg transition-all duration-300 cursor-pointer"
+              onClick={() => setSelectedProduct(product)}
             >
               {/* Product Image */}
-              <div className="relative aspect-square bg-gray-50 p-4 flex items-center justify-center overflow-hidden">
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="max-h-full max-w-full object-contain group-hover:scale-110 transition-transform duration-300"
-                />
+              <div className="relative aspect-square bg-gray-50 flex items-center justify-center overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-gray-100 to-gray-200" />
+                <div className="relative z-10 p-4">
+                  <div className="bg-gray-300 border-2 border-dashed border-gray-400 rounded-lg w-24 h-24 sm:w-32 sm:h-32 flex items-center justify-center">
+                    <span className="text-xs text-gray-500 text-center px-2">{product.name.slice(0, 15)}...</span>
+                  </div>
+                </div>
                 
                 {/* Tags */}
-                <div className="absolute top-3 left-3 flex flex-col gap-1">
-                  {product.tags.map((tag) => (
+                <div className="absolute top-2 left-2 flex flex-col gap-1 z-20">
+                  {product.tags.slice(0, 2).map((tag) => (
                     <span
                       key={tag}
-                      className={`px-2 py-1 text-xs font-medium rounded-full ${
+                      className={`px-2 py-0.5 text-[10px] sm:text-xs font-medium rounded-full ${
                         tag === 'Best Seller' ? 'bg-orange-500 text-white' :
                         tag === 'Hot Selling' ? 'bg-red-500 text-white' :
                         tag === 'New Arrival' ? 'bg-blue-500 text-white' :
@@ -224,108 +419,176 @@ export default function Products() {
                   ))}
                 </div>
 
-                {/* Discount Badge */}
+                {/* Discount */}
                 {product.mrp > product.price && (
-                  <div className="absolute top-3 right-3 bg-red-500 text-white px-2 py-1 rounded-lg text-xs font-bold">
+                  <div className="absolute top-2 right-2 bg-red-500 text-white px-1.5 py-0.5 rounded text-[10px] sm:text-xs font-bold z-20">
                     {Math.round((1 - product.price / product.mrp) * 100)}% OFF
                   </div>
                 )}
+
+                {/* Quick Actions */}
+                <div className="absolute top-2 right-2 flex flex-col gap-1 z-20">
+                  <button
+                    onClick={(e) => { e.stopPropagation(); toggleWishlist(product.id); }}
+                    className="p-2 bg-white rounded-full shadow-md hover:shadow-lg transition-all"
+                    title="Add to Wishlist"
+                  >
+                    <Heart 
+                      className={`w-4 h-4 ${wishlist.includes(product.id) ? 'fill-red-500 text-red-500' : 'text-gray-400'}`} 
+                    />
+                  </button>
+                  <button
+                    onClick={(e) => { e.stopPropagation(); setSelectedProduct(product); }}
+                    className="p-2 bg-white rounded-full shadow-md hover:shadow-lg transition-all sm:hidden"
+                    title="Quick View"
+                  >
+                    <Search className="w-4 h-4 text-gray-600" />
+                  </button>
+                </div>
               </div>
 
               {/* Product Info */}
-              <div className="p-4">
-                <div className="flex items-start justify-between gap-2 mb-2">
-                  <div>
-                    <p className="text-xs text-gray-400 uppercase tracking-wider">{product.category}</p>
-                    <h3 className="font-semibold text-gray-900 text-sm leading-tight">{product.name}</h3>
+              <div className="p-3">
+                <div className="flex items-center justify-between mb-1">
+                  <span className="text-[10px] sm:text-xs text-gray-400 uppercase">{product.category}</span>
+                  <div className="flex items-center gap-1">
+                    <Star className="w-3 h-3 text-yellow-400 fill-yellow-400" />
+                    <span className="text-[10px] sm:text-xs text-gray-600">{product.rating}</span>
                   </div>
                 </div>
 
-                <p className="text-xs text-gray-500 mb-3 line-clamp-2">{product.description}</p>
+                <h3 className="font-semibold text-gray-900 text-xs sm:text-sm leading-tight mb-1 line-clamp-2">
+                  {product.name}
+                </h3>
 
-                {/* Specs */}
-                <div className="flex items-center gap-2 mb-3 text-xs">
-                  <span className="px-2 py-1 bg-gray-100 rounded text-gray-600">{product.specs.voltage}</span>
-                  <span className="px-2 py-1 bg-gray-100 rounded text-gray-600">{product.specs.capacity}</span>
-                  <span className="px-2 py-1 bg-green-50 text-green-700 rounded">{product.specs.warranty}</span>
+                <p className="text-[10px] sm:text-xs text-gray-500 mb-2 line-clamp-2 hidden sm:block">
+                  {product.description}
+                </p>
+
+                <div className="flex items-baseline gap-2 mb-2">
+                  <span className="text-sm sm:text-base font-bold text-gray-900">{formatPrice(product.price)}</span>
+                  <span className="text-xs text-gray-400 line-through">{formatPrice(product.mrp)}</span>
                 </div>
 
-                {/* Price */}
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="text-lg font-bold text-gray-900">{formatPrice(product.price)}</span>
-                  <span className="text-sm text-gray-400 line-through">{formatPrice(product.mrp)}</span>
+                {/* Stock Indicator */}
+                <div className="flex items-center gap-1 mb-2">
+                  <div className={`w-2 h-2 rounded-full ${product.stock > 10 ? 'bg-green-500' : product.stock > 0 ? 'bg-yellow-500' : 'bg-red-500'}`} />
+                  <span className={`text-[10px] sm:text-xs ${product.stock > 10 ? 'text-green-600' : product.stock > 0 ? 'text-yellow-600' : 'text-red-600'}`}>
+                    {product.stock > 10 ? 'In Stock' : product.stock > 0 ? `Only ${product.stock} left` : 'Out of Stock'}
+                  </span>
+                </div>
+
+                {/* Reviews */}
+                <div className="flex items-center gap-1 mb-2">
+                  <div className="flex">
+                    {[...Array(5)].map((_, i) => (
+                      <Star 
+                        key={i} 
+                        className={`w-3 h-3 ${i < Math.floor(product.rating) ? 'text-yellow-400 fill-yellow-400' : 'text-gray-300'}`} 
+                      />
+                    ))}
+                  </div>
+                  <span className="text-[10px] text-gray-500">({product.reviews})</span>
                 </div>
 
                 {/* Action Buttons */}
                 <div className="flex gap-2">
                   <button
-                    onClick={() => addToCart(product.id)}
-                    disabled={cart.includes(product.id)}
-                    className={`flex-1 py-2.5 rounded-xl text-sm font-semibold transition-all ${
-                      cart.includes(product.id)
-                        ? 'bg-green-100 text-green-700'
-                        : 'bg-gradient-to-r from-green-500 to-cyan-500 text-white hover:shadow-lg hover:scale-[1.02]'
+                    onClick={(e) => { 
+                      e.stopPropagation(); 
+                      const existingItem = cart.find(item => item.productId === product.id);
+                      if (existingItem) {
+                        updateQuantity(product.id, existingItem.quantity + 1);
+                      } else {
+                        addToCart(product.id, 1);
+                      }
+                    }}
+                    disabled={product.stock === 0}
+                    className={`flex-1 py-2 rounded-lg text-xs sm:text-sm font-semibold transition-all ${
+                      product.stock === 0 
+                        ? 'bg-gray-300 text-gray-500 cursor-not-allowed' 
+                        : cart.some(item => item.productId === product.id)
+                          ? 'bg-green-500 text-white'
+                          : 'bg-blue-500 text-white hover:bg-blue-600 hover:shadow-md'
                     }`}
                   >
-                    {cart.includes(product.id) ? 'Added ✓' : 'Add to Cart'}
+                    {product.stock === 0 
+                      ? 'Out of Stock' 
+                      : cart.some(item => item.productId === product.id)
+                        ? `Added (${cart.find(item => item.productId === product.id)?.quantity})`
+                        : 'Add to Cart'
+                    }
                   </button>
-                </div>
-
-                {/* Quick Actions */}
-                <div className="flex items-center justify-center gap-4 mt-3 pt-3 border-t border-gray-100">
-                  <a
-                    href="tel:+91-7625888880"
-                    className="flex items-center gap-1 text-xs text-gray-500 hover:text-green-600 transition-colors"
+                  <button
+                    onClick={(e) => { 
+                      e.stopPropagation(); 
+                      if (product.stock > 0) {
+                        addToCart(product.id, 1);
+                        setTimeout(() => setShowCheckout(true), 300);
+                      }
+                    }}
+                    disabled={product.stock === 0}
+                    className={`px-3 py-2 rounded-lg text-xs sm:text-sm font-semibold transition-all ${
+                      product.stock === 0 
+                        ? 'bg-gray-300 text-gray-500 cursor-not-allowed' 
+                        : 'bg-orange-500 text-white hover:bg-orange-600 hover:shadow-md'
+                    }`}
                   >
-                    <Phone className="w-3.5 h-3.5" />
-                    Call
-                  </a>
-                  <a
-                    href="https://wa.me/91-7625888880"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-1 text-xs text-gray-500 hover:text-green-600 transition-colors"
-                  >
-                    <MessageCircle className="w-3.5 h-3.5" />
-                    WhatsApp
-                  </a>
+                    Buy
+                  </button>
                 </div>
               </div>
             </motion.div>
           ))}
         </div>
 
-        {/* Empty State */}
         {filteredProducts.length === 0 && (
           <div className="text-center py-20">
             <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
               <Search className="w-8 h-8 text-gray-400" />
             </div>
             <h3 className="text-lg font-semibold text-gray-900 mb-2">No products found</h3>
-            <p className="text-gray-500">Try adjusting your search or filter criteria</p>
           </div>
         )}
       </div>
 
-      {/* Contact Banner */}
-      <div className="bg-gradient-to-r from-green-500 to-cyan-500 mt-12">
-        <div className="max-w-7xl mx-auto px-4 py-8">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="text-center md:text-left">
-              <h3 className="text-xl font-bold text-white mb-1">Need Bulk Orders or Custom Specifications?</h3>
-              <p className="text-green-50">Contact us for wholesale pricing and customized battery solutions</p>
+      {/* Trust Badges */}
+      <div className="bg-white border-t border-gray-200 mt-8">
+        <div className="max-w-7xl mx-auto px-4 py-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              { icon: Truck, title: 'Free Shipping', desc: 'On orders above ₹2000' },
+              { icon: Shield, title: 'Genuine Products', desc: '100% authentic items' },
+              { icon: RotateCcw, title: 'Easy Returns', desc: '7-day return policy' },
+              { icon: Phone, title: 'Support', desc: '+91 7625888880' }
+            ].map((feature, idx) => (
+              <div key={idx} className="flex items-center gap-2 sm:gap-3">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <feature.icon className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600" />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-900 text-xs sm:text-sm">{feature.title}</h4>
+                  <p className="text-[10px] sm:text-xs text-gray-500">{feature.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Bulk Order CTA */}
+      <div className="bg-gradient-to-r from-blue-500 to-cyan-500">
+        <div className="max-w-7xl mx-auto px-4 py-6 sm:py-8">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="text-center sm:text-left">
+              <h3 className="text-lg sm:text-xl font-bold text-white">Need Bulk Orders for Your Store?</h3>
+              <p className="text-blue-50 text-sm">Wholesale pricing available for retailers and distributors</p>
             </div>
             <div className="flex gap-3">
-              <a
-                href="tel:+91-7625888880"
-                className="px-6 py-3 bg-white text-green-600 font-semibold rounded-xl hover:shadow-lg transition-all"
-              >
+              <a href="tel:+91-7625888880" className="px-4 sm:px-6 py-2.5 bg-white text-blue-600 font-semibold rounded-xl hover:shadow-lg transition-all text-sm">
                 Call Now
               </a>
-              <Link
-                to="/contact"
-                className="px-6 py-3 bg-green-700 text-white font-semibold rounded-xl hover:bg-green-800 transition-all"
-              >
+              <Link to="/contact" className="px-4 sm:px-6 py-2.5 bg-blue-700 text-white font-semibold rounded-xl hover:bg-blue-800 transition-all text-sm">
                 Get Quote
               </Link>
             </div>
@@ -333,29 +596,270 @@ export default function Products() {
         </div>
       </div>
 
-      {/* Features */}
-      <div className="bg-white border-t border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 py-12">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {[
-              { icon: Zap, title: 'Fast Delivery', desc: 'All India shipping' },
-              { icon: Star, title: 'Genuine Products', desc: '100% authentic' },
-              { icon: Battery, title: 'Long Warranty', desc: 'Up to 3 years' },
-              { icon: ShoppingCart, title: 'Bulk Orders', desc: 'Wholesale pricing' }
-            ].map((feature, idx) => (
-              <div key={idx} className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <feature.icon className="w-6 h-6 text-green-600" />
+      {/* Product Detail Modal */}
+      <AnimatePresence>
+        {selectedProduct && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4"
+            onClick={() => setSelectedProduct(null)}
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+              onClick={e => e.stopPropagation()}
+            >
+              <div className="p-6">
+                <div className="flex justify-between items-start mb-4">
+                  <div>
+                    <span className="text-sm text-gray-500">{selectedProduct.category}</span>
+                    <h2 className="text-2xl font-bold text-gray-900">{selectedProduct.name}</h2>
+                    <div className="flex items-center gap-2 mt-1">
+                      <div className="flex items-center gap-1">
+                        <Star className="w-4 h-4 text-yellow-400 fill-yellow-400" />
+                        <span className="text-sm font-medium">{selectedProduct.rating}</span>
+                      </div>
+                      <span className="text-sm text-gray-500">({selectedProduct.reviews} reviews)</span>
+                    </div>
+                  </div>
+                  <button 
+                    onClick={() => setSelectedProduct(null)}
+                    className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+                  >
+                    <X className="w-5 h-5" />
+                  </button>
                 </div>
-                <div>
-                  <h4 className="font-semibold text-gray-900 text-sm">{feature.title}</h4>
-                  <p className="text-xs text-gray-500">{feature.desc}</p>
+
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="aspect-square bg-gray-100 rounded-xl flex items-center justify-center">
+                    <div className="bg-gray-300 border-2 border-dashed border-gray-400 rounded-lg w-32 h-32 flex items-center justify-center">
+                      <span className="text-sm text-gray-500 text-center px-2">{selectedProduct.name.slice(0, 20)}...</span>
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <p className="text-gray-600 mb-4">{selectedProduct.description}</p>
+                    
+                    <div className="mb-4">
+                      <h4 className="font-semibold mb-2">Key Features:</h4>
+                      <ul className="space-y-1">
+                        {selectedProduct.features.map((feature, idx) => (
+                          <li key={idx} className="flex items-center gap-2 text-sm text-gray-600">
+                            <CheckCircle className="w-4 h-4 text-green-500" />
+                            {feature}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div className="flex items-baseline gap-3 mb-4">
+                      <span className="text-3xl font-bold text-gray-900">{formatPrice(selectedProduct.price)}</span>
+                      <span className="text-lg text-gray-400 line-through">{formatPrice(selectedProduct.mrp)}</span>
+                      <span className="text-sm text-green-600 font-medium">
+                        {Math.round((1 - selectedProduct.price / selectedProduct.mrp) * 100)}% off
+                      </span>
+                    </div>
+
+                    <div className="flex gap-3">
+                      <button 
+                        onClick={() => { addToCart(selectedProduct.id); setSelectedProduct(null); }}
+                        className="flex-1 py-3 bg-blue-500 text-white font-semibold rounded-xl hover:bg-blue-600 transition-all"
+                      >
+                        Add to Cart
+                      </button>
+                      <button 
+                        onClick={() => toggleWishlist(selectedProduct.id)}
+                        className="p-3 border-2 border-gray-200 rounded-xl hover:bg-gray-50 transition-all"
+                      >
+                        <Heart className={`w-5 h-5 ${wishlist.includes(selectedProduct.id) ? 'fill-red-500 text-red-500' : 'text-gray-400'}`} />
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
-            ))}
-          </div>
-        </div>
-      </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Cart Sidebar */}
+      <AnimatePresence>
+        {isCartOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/50 z-50"
+            onClick={() => setIsCartOpen(false)}
+          >
+            <motion.div
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ type: 'tween' }}
+              className="absolute right-0 top-0 h-full w-full max-w-md bg-white shadow-2xl"
+              onClick={e => e.stopPropagation()}
+            >
+              <div className="flex flex-col h-full">
+                <div className="flex items-center justify-between p-4 border-b">
+                  <h2 className="text-xl font-bold">Shopping Cart ({getCartItemCount()})</h2>
+                  <button onClick={() => setIsCartOpen(false)} className="p-2 hover:bg-gray-100 rounded-full">
+                    <X className="w-5 h-5" />
+                  </button>
+                </div>
+
+                <div className="flex-1 overflow-y-auto p-4">
+                  {cart.length === 0 ? (
+                    <div className="text-center py-12">
+                      <ShoppingCart className="w-16 h-16 text-gray-300 mx-auto mb-4" />
+                      <p className="text-gray-500">Your cart is empty</p>
+                    </div>
+                  ) : (
+                    <div className="space-y-4">
+                      {cart.map(item => {
+                        const product = products.find(p => p.id === item.productId)
+                        if (!product) return null
+                        return (
+                          <div key={item.productId} className="flex gap-3 bg-gray-50 p-3 rounded-xl">
+                            <div className="w-20 h-20 bg-gray-200 rounded-lg flex items-center justify-center flex-shrink-0">
+                              <Package className="w-8 h-8 text-gray-400" />
+                            </div>
+                            <div className="flex-1">
+                              <h4 className="font-semibold text-sm line-clamp-1">{product.name}</h4>
+                              <p className="text-gray-500 text-xs">{product.sku}</p>
+                              <div className="flex items-center justify-between mt-2">
+                                <div className="flex items-center gap-2">
+                                  <button 
+                                    onClick={() => updateQuantity(item.productId, item.quantity - 1)}
+                                    className="p-1 hover:bg-gray-200 rounded"
+                                  >
+                                    <Minus className="w-4 h-4" />
+                                  </button>
+                                  <span className="w-8 text-center font-medium">{item.quantity}</span>
+                                  <button 
+                                    onClick={() => updateQuantity(item.productId, item.quantity + 1)}
+                                    className="p-1 hover:bg-gray-200 rounded"
+                                  >
+                                    <Plus className="w-4 h-4" />
+                                  </button>
+                                </div>
+                                <span className="font-semibold">{formatPrice(product.price * item.quantity)}</span>
+                              </div>
+                            </div>
+                            <button 
+                              onClick={() => removeFromCart(item.productId)}
+                              className="p-2 hover:bg-red-50 text-red-500 rounded-lg self-start"
+                            >
+                              <Trash2 className="w-4 h-4" />
+                            </button>
+                          </div>
+                        )
+                      })}
+                    </div>
+                  )}
+                </div>
+
+                {cart.length > 0 && (
+                  <div className="border-t p-4 space-y-4">
+                    <div className="flex justify-between text-lg font-bold">
+                      <span>Total:</span>
+                      <span>{formatPrice(getCartTotal())}</span>
+                    </div>
+                    <button 
+                      onClick={handleCheckout}
+                      className="w-full py-4 bg-blue-500 text-white font-semibold rounded-xl hover:bg-blue-600 transition-all"
+                    >
+                      Proceed to Checkout
+                    </button>
+                  </div>
+                )}
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Checkout Modal */}
+      <AnimatePresence>
+        {showCheckout && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4"
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              className="bg-white rounded-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto"
+            >
+              {orderPlaced ? (
+                <div className="p-8 text-center">
+                  <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <CheckCircle className="w-10 h-10 text-green-500" />
+                  </div>
+                  <h2 className="text-2xl font-bold text-gray-900 mb-2">Order Placed!</h2>
+                  <p className="text-gray-600">Thank you for your order. We will contact you shortly.</p>
+                </div>
+              ) : (
+                <div className="p-6">
+                  <div className="flex items-center justify-between mb-6">
+                    <h2 className="text-xl font-bold">Checkout</h2>
+                    <button onClick={() => setShowCheckout(false)} className="p-2 hover:bg-gray-100 rounded-full">
+                      <X className="w-5 h-5" />
+                    </button>
+                  </div>
+
+                  <div className="space-y-4 mb-6">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                      <div className="relative">
+                        <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                        <input type="text" className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Enter your name" />
+                      </div>
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                      <div className="relative">
+                        <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                        <input type="tel" className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="+91 7625888880" />
+                      </div>
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">Delivery Address</label>
+                      <div className="relative">
+                        <MapPin className="absolute left-3 top-3 w-5 h-5 text-gray-400" />
+                        <textarea className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent" rows={3} placeholder="Enter your address"></textarea>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="border-t pt-4 mb-4">
+                    <div className="flex justify-between text-lg font-bold mb-2">
+                      <span>Total Amount:</span>
+                      <span>{formatPrice(getCartTotal())}</span>
+                    </div>
+                    <p className="text-sm text-gray-500">Cash on Delivery available</p>
+                  </div>
+
+                  <button 
+                    onClick={placeOrder}
+                    className="w-full py-4 bg-blue-500 text-white font-semibold rounded-xl hover:bg-blue-600 transition-all flex items-center justify-center gap-2"
+                  >
+                    <CreditCard className="w-5 h-5" />
+                    Place Order
+                  </button>
+                </div>
+              )}
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   )
 }
