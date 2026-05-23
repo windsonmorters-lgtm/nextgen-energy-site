@@ -1,10 +1,10 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { 
   Search, ShoppingCart, Filter, Phone, Heart, 
   Truck, Shield, RotateCcw, X, Plus, Minus, Trash2, CreditCard, 
-  MapPin, User, Star, Package, CheckCircle 
+  MapPin, User, Star, Package, CheckCircle, ChevronLeft, ChevronRight
 } from 'lucide-react'
 
 // Extended Product data with more details
@@ -294,6 +294,50 @@ export default function Products() {
     }, 3000)
   }
 
+  // Hero carousel slides
+  const heroSlides = [
+    {
+      id: 1,
+      title: 'Battery Operated',
+      subtitle: 'BIKE RIDE ON',
+      description: 'Premium electric bikes for kids with realistic design and safety features',
+      cta: 'Shop Now',
+      bgGradient: 'from-blue-600 to-purple-600',
+      tag: 'New Collection'
+    },
+    {
+      id: 2,
+      title: 'Baby Tricycles',
+      subtitle: 'SAFE & STURDY',
+      description: 'Adjustable parent handle, safety belt, and storage basket included',
+      cta: 'Explore',
+      bgGradient: 'from-green-500 to-teal-500',
+      tag: 'Best Seller'
+    },
+    {
+      id: 3,
+      title: 'Kids Furniture',
+      subtitle: 'STUDY & STORAGE',
+      description: 'Ergonomic study tables and colorful storage solutions for kids',
+      cta: 'View All',
+      bgGradient: 'from-orange-500 to-red-500',
+      tag: 'Popular'
+    }
+  ]
+
+  const [currentSlide, setCurrentSlide] = useState(0)
+
+  // Auto-rotate carousel
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroSlides.length)
+    }, 5000)
+    return () => clearInterval(interval)
+  }, [heroSlides.length])
+
+  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % heroSlides.length)
+  const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length)
+
   return (
     <div className="pt-28 sm:pt-32 min-h-screen bg-gray-50">
       {/* Header */}
@@ -338,6 +382,90 @@ export default function Products() {
               </button>
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* Hero Carousel */}
+      <div className="relative bg-gray-100 overflow-hidden">
+        <div 
+          className="flex transition-transform duration-500 ease-out"
+          style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+        >
+          {heroSlides.map((slide) => (
+            <div 
+              key={slide.id}
+              className={`w-full flex-shrink-0 bg-gradient-to-r ${slide.bgGradient} relative`}
+            >
+              <div className="max-w-7xl mx-auto px-4 py-8 sm:py-12 md:py-16">
+                <div className="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-12">
+                  {/* Left Content */}
+                  <div className="flex-1 text-center md:text-left text-white">
+                    <span className="inline-block px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-xs sm:text-sm font-medium mb-3">
+                      {slide.tag}
+                    </span>
+                    <h2 className="text-xl sm:text-2xl md:text-3xl font-medium mb-1">
+                      {slide.title}
+                    </h2>
+                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 tracking-tight">
+                      {slide.subtitle}
+                    </h1>
+                    <p className="text-sm sm:text-base md:text-lg text-white/90 mb-6 max-w-lg">
+                      {slide.description}
+                    </p>
+                    <button 
+                      onClick={() => setSelectedCategory('all')}
+                      className="px-6 sm:px-8 py-2.5 sm:py-3 bg-white text-gray-900 font-bold rounded-xl hover:shadow-2xl hover:scale-105 transition-all text-sm sm:text-base"
+                    >
+                      {slide.cta}
+                    </button>
+                  </div>
+                  
+                  {/* Right Image Placeholder */}
+                  <div className="flex-1 flex justify-center md:justify-end">
+                    <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80">
+                      <div className="absolute inset-0 bg-white/10 backdrop-blur-sm rounded-3xl transform rotate-6" />
+                      <div className="absolute inset-0 bg-white/20 backdrop-blur-sm rounded-3xl transform -rotate-3" />
+                      <div className="relative w-full h-full bg-white/30 backdrop-blur-md rounded-3xl border-2 border-white/40 flex items-center justify-center shadow-2xl">
+                        <div className="text-center text-white/80">
+                          <ShoppingCart className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-2 opacity-60" />
+                          <span className="text-xs sm:text-sm font-medium">{slide.title}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Navigation Arrows */}
+        <button 
+          onClick={prevSlide}
+          className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 p-2 sm:p-3 bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white rounded-full transition-all hover:scale-110"
+        >
+          <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
+        </button>
+        <button 
+          onClick={nextSlide}
+          className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 p-2 sm:p-3 bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white rounded-full transition-all hover:scale-110"
+        >
+          <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
+        </button>
+
+        {/* Dot Indicators */}
+        <div className="absolute bottom-3 sm:bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5 sm:gap-2">
+          {heroSlides.map((_, idx) => (
+            <button
+              key={idx}
+              onClick={() => setCurrentSlide(idx)}
+              className={`w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full transition-all ${
+                idx === currentSlide 
+                  ? 'bg-white w-5 sm:w-6' 
+                  : 'bg-white/50 hover:bg-white/70'
+              }`}
+            />
+          ))}
         </div>
       </div>
 
