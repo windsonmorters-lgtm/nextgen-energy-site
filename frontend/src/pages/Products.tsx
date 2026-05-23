@@ -210,7 +210,6 @@ interface CartItem {
 
 export default function Products() {
   const [selectedCategory, setSelectedCategory] = useState('all')
-  const [searchQuery, setSearchQuery] = useState('')
   const [cart, setCart] = useState<CartItem[]>([])
   const [wishlist, setWishlist] = useState<number[]>([])
   const [selectedProduct, setSelectedProduct] = useState<typeof products[0] | null>(null)
@@ -219,10 +218,7 @@ export default function Products() {
   const [orderPlaced, setOrderPlaced] = useState(false)
 
   const filteredProducts = products.filter(product => {
-    const matchesCategory = selectedCategory === 'all' || product.category === selectedCategory
-    const matchesSearch = product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                          product.sku.toLowerCase().includes(searchQuery.toLowerCase())
-    return matchesCategory && matchesSearch
+    return selectedCategory === 'all' || product.category === selectedCategory
   })
 
   const addToCart = (productId: number, quantity = 1) => {
