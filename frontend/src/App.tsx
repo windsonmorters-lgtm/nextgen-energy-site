@@ -13,6 +13,7 @@ import CustomerSupport from './pages/CustomerSupport'
 import Gallery from './pages/Gallery'
 import Career from './pages/Career'
 import OurPresence from './pages/OurPresence'
+import EServices from './pages/EServices'
 import PrivacyPolicy from './pages/PrivacyPolicy'
 import TermsConditions from './pages/TermsConditions'
 
@@ -34,6 +35,7 @@ function App() {
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/career" element={<Career />} />
             <Route path="/our-presence" element={<OurPresence />} />
+            <Route path="/e-services" element={<EServices />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-and-conditions" element={<TermsConditions />} />
             <Route path="/contact" element={<Contact />} />
@@ -55,7 +57,7 @@ function App() {
           
           {/* Contact QR - Bottom */}
           <div className="flex flex-col items-center gap-1">
-            <span className="text-xs text-gray-600 bg-white/90 px-2 py-1 rounded shadow font-medium">V-Chat</span>
+            <span className="text-xs text-gray-600 bg-white/90 px-2 py-1 rounded shadow font-medium">WeChat</span>
             <img 
               src="/qr contact.jpeg" 
               alt="Contact QR Code" 
