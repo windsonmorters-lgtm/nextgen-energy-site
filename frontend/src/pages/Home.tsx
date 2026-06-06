@@ -52,7 +52,7 @@ export default function Home() {
   // Product showcase data - Electric Scooter Batteries
   const products = [
     { name: 'E-Scooter Battery 51V 30AH', voltage: '51V', capacity: '30AH', weight: '14.5 Kg', image: '/battery-48v.jpg' },
-    { name: 'E-Scooter Battery 60V 30AH', voltage: '60V', capacity: '30AH', weight: '15.2 Kg', image: '/IMG-20260605-WA0021.jpg' },
+    { name: 'E-Scooter Battery 60V 30AH', voltage: '60V', capacity: '30AH', weight: '15.2 Kg', image: '/IMG-20260605-WA0021-middle.jpg' },
     { name: 'E-Scooter Battery 60V 45AH', voltage: '60V', capacity: '45AH', weight: '16.8 Kg', image: '/battery-60v-29.jpg' },
    
   ]
