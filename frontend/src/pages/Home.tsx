@@ -51,10 +51,10 @@ export default function Home() {
 
   // Product showcase data - Electric Scooter Batteries
   const products = [
-    { name: 'E-Scooter Battery 51V 30AH', voltage: '51V', capacity: '30AH', weight: '14.5 Kg', image: '/battery-48v.jpg' },
+    { name: 'E-Scooter Battery 51V 30AH', voltage: '51V', capacity: '30AH', weight: '14.5 Kg', image: '/Devi-Battery.jpeg' },
     { name: 'E-Scooter Battery 60V 30AH', voltage: '60V', capacity: '30AH', weight: '15.2 Kg', image: '/Devi-Battery.jpeg' },
-    { name: 'E-Scooter Battery 60V 45AH', voltage: '60V', capacity: '45AH', weight: '16.8 Kg', image: '/battery-60v-29.jpg' },
-   
+    { name: 'E-Scooter Battery 60V 45AH', voltage: '60V', capacity: '45AH', weight: '16.8 Kg', image: '/Devi-Battery.jpeg' },
+
   ]
 
   // Core Strengths data
@@ -182,9 +182,9 @@ export default function Home() {
                 className="bg-slate-800 rounded-xl overflow-hidden border border-slate-700 hover:border-accent-green/50 transition group"
               >
                 <div className="h-64 bg-gradient-to-br from-accent-green/20 to-accent-cyan/20 flex items-center justify-center overflow-hidden">
-                  <img 
-                    src={product.image} 
-                    alt={product.name} 
+                  <img
+                    src={product.image}
+                    alt={product.name}
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -367,7 +367,7 @@ export default function Home() {
           <p className="text-center text-gray-400 mb-10 sm:mb-16 max-w-2xl mx-auto px-4 text-sm sm:text-base">
             Full-lifecycle battery management from sourcing to recycling
           </p>
-          
+
           {/* Timeline */}
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3 sm:gap-4 mb-12">
             {ecosystemPhases.map((item, idx) => (
