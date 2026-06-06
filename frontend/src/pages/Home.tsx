@@ -52,7 +52,7 @@ export default function Home() {
   // Product showcase data - Electric Scooter Batteries
   const products = [
     { name: 'E-Scooter Battery 51V 30AH', voltage: '51V', capacity: '30AH', weight: '14.5 Kg', image: '/battery-48v.jpg' },
-    { name: 'E-Scooter Battery 60V 30AH', voltage: '60V', capacity: '30AH', weight: '15.2 Kg', image: '/IMG-20260605-WA0021-middle.jpg' },
+    { name: 'E-Scooter Battery 60V 30AH', voltage: '60V', capacity: '30AH', weight: '15.2 Kg', image: '/Devi-Battery.jpeg' },
     { name: 'E-Scooter Battery 60V 45AH', voltage: '60V', capacity: '45AH', weight: '16.8 Kg', image: '/battery-60v-29.jpg' },
    
   ]
@@ -181,11 +181,11 @@ export default function Home() {
                 transition={{ delay: idx * 0.1 }}
                 className="bg-slate-800 rounded-xl overflow-hidden border border-slate-700 hover:border-accent-green/50 transition group"
               >
-                <div className="h-48 bg-gradient-to-br from-accent-green/20 to-accent-cyan/20 flex items-center justify-center p-4">
+                <div className="h-64 bg-gradient-to-br from-accent-green/20 to-accent-cyan/20 flex items-center justify-center overflow-hidden">
                   <img 
                     src={product.image} 
                     alt={product.name} 
-                    className="max-h-full max-w-full object-contain"
+                    className="w-full h-full object-cover"
                   />
                 </div>
                 <div className="p-4 sm:p-6">
