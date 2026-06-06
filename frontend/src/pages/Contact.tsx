@@ -37,18 +37,18 @@ export default function Contact() {
   const offices = [
     {
       city: 'Corporate Office',
-      location: 'Ghaziabad, Uttar Pradesh',
-      address: '123 Industrial Complex, Ghaziabad 201001, India',
+      location: 'Haryana',
+      address: 'Ellenabad, Sirsa, Haryana 125102, India',
       phone: '+91-76258-88880',
-      email: 'corporate@Naxen Exim India.in',
+      email: 'narottam@naxenindia.com',
       hours: 'Mon-Fri: 9:00 AM - 6:00 PM'
     },
     {
       city: 'Manufacturing Plant',
-      location: 'New Delhi',
-      address: '456 Production Zone, Delhi 110095, India',
+      location: 'Haryana',
+      address: 'Ellenabad, Sirsa, Haryana 125102, India',
       phone: '+91-76258-88880',
-      email: 'plant@Naxen Exim India.in',
+      email: 'narottam@naxenindia.com',
       hours: 'Mon-Fri: 8:00 AM - 8:00 PM'
     }
   ]
@@ -293,7 +293,7 @@ export default function Contact() {
           <div className="h-96 bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl border-2 border-accent-cyan/30 flex items-center justify-center">
             <div className="text-center">
               <p className="text-white text-xl font-semibold mb-4">📍 Interactive Map</p>
-              <p className="text-gray-400">Ghaziabad & New Delhi Operations</p>
+              <p className="text-gray-400">Ellenabad, Sirsa, Haryana 125102</p>
             </div>
           </div>
         </div>
