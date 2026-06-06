@@ -51,12 +51,10 @@ export default function Home() {
 
   // Product showcase data - Electric Scooter Batteries
   const products = [
-    { name: 'E-Scooter Battery 48V 29AH', voltage: '48V', capacity: '29AH', weight: '14.5 Kg', image: '/battery-48v.jpg' },
-    { name: 'E-Scooter Battery 60V 25AH', voltage: '60V', capacity: '25AH', weight: '15.2 Kg', image: '/battery-60v.jpg' },
-    { name: 'E-Scooter Battery 60V 29AH', voltage: '60V', capacity: '29AH', weight: '16.8 Kg', image: '/battery-60v-29.jpg' },
-    { name: 'E-Rickshaw Battery 51.2V 100AH', voltage: '51.2V', capacity: '100AH', weight: '38 Kg', image: '/battery-erickshaw.jpg' },
-    { name: 'Inverter Battery 12.8V 150AH', voltage: '12.8V', capacity: '150AH', weight: '18 Kg', image: '/battery-inverter.jpg' },
-    { name: 'Solar Battery 51.2V 100AH', voltage: '51.2V', capacity: '100AH', weight: '42 Kg', image: '/battery-solar.jpg' }
+    { name: 'E-Scooter Battery 51V 30AH', voltage: '51V', capacity: '30AH', weight: '14.5 Kg', image: '/battery-48v.jpg' },
+    { name: 'E-Scooter Battery 60V 30AH', voltage: '60V', capacity: '30AH', weight: '15.2 Kg', image: '/IMG-20260605-WA0021.jpg' },
+    { name: 'E-Scooter Battery 60V 45AH', voltage: '60V', capacity: '45AH', weight: '16.8 Kg', image: '/battery-60v-29.jpg' },
+   
   ]
 
   // Core Strengths data
