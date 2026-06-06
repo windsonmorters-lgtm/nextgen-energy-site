@@ -105,7 +105,7 @@ export default function Career() {
               Join Our Team and Build the Future of Energy Storage
             </p>
             <p className="text-gray-400 max-w-2xl mx-auto">
-              Be part of India's leading lithium battery manufacturer. We're looking for 
+              Be part of India's leading lithium battery manufacturer. We're looking for
               passionate individuals who want to make a difference in sustainable energy.
             </p>
           </motion.div>
@@ -187,8 +187,8 @@ export default function Career() {
                         </span>
                       </div>
                     </div>
-                    <ChevronRight 
-                      className={`w-6 h-6 text-gray-400 transition ${selectedJob === job.id ? 'rotate-90' : ''}`} 
+                    <ChevronRight
+                      className={`w-6 h-6 text-gray-400 transition ${selectedJob === job.id ? 'rotate-90' : ''}`}
                     />
                   </div>
                 </div>
@@ -262,22 +262,22 @@ export default function Career() {
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold text-slate-950 mb-4">Don't See a Suitable Role?</h2>
           <p className="text-lg text-slate-900 mb-8">
-            We're always looking for talented individuals. Send us your resume and we'll 
+            We're always looking for talented individuals. Send us your resume and we'll
             keep you in mind for future opportunities.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <a
-              href="mailto:careers@Naxen Exim Indiaenergy.com"
+              href="mailto:naxenindia@gmail.com"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-slate-950 text-accent-green font-bold rounded-lg hover:shadow-2xl transition"
             >
               <Briefcase className="w-5 h-5" />
               Send Your Resume
             </a>
             <a
-              href="mailto:careers@Naxen Exim Indiaenergy.com"
+              href="mailto:naxenindia@gmail.com"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-slate-950 text-slate-950 font-bold rounded-lg hover:bg-slate-950/10 transition"
             >
-              careers@Naxen Exim Indiaenergy.com
+              naxenindia@gmail.com
             </a>
           </div>
         </div>
