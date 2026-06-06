@@ -181,8 +181,12 @@ export default function Home() {
                 transition={{ delay: idx * 0.1 }}
                 className="bg-slate-800 rounded-xl overflow-hidden border border-slate-700 hover:border-accent-green/50 transition group"
               >
-                <div className="h-48 bg-gradient-to-br from-accent-green/20 to-accent-cyan/20 flex items-center justify-center">
-                  <Zap className="w-20 h-20 text-accent-green/60" />
+                <div className="h-48 bg-gradient-to-br from-accent-green/20 to-accent-cyan/20 flex items-center justify-center p-4">
+                  <img 
+                    src={product.image} 
+                    alt={product.name} 
+                    className="max-h-full max-w-full object-contain"
+                  />
                 </div>
                 <div className="p-4 sm:p-6">
                   <h3 className="text-lg sm:text-xl font-bold text-white mb-3">{product.name}</h3>
