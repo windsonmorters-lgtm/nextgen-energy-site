@@ -2,8 +2,14 @@ import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { ArrowRight, Zap, BarChart3, Globe, Leaf, Quote, Award, Shield, Users, Microscope, FileText, Newspaper } from 'lucide-react'
 import { useEffect, useState } from 'react'
+import useSEO from '../hooks/useSEO'
 
 export default function Home() {
+  useSEO(
+    'Lithium Battery & Solar Energy Storage Solutions',
+    'Naxen Exim India manufactures high-performance Lithium-Ion battery packs, smart BMS, and solar ESS storage solutions for EV mobility and grid systems.'
+  )
+
   const [counts, setCounts] = useState({ facility: 0, capacity: 0, pincodes: 0, partners: 0 })
 
   // Counter animation

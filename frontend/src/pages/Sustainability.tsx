@@ -1,8 +1,14 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { Leaf, Droplet, Recycle } from 'lucide-react'
+import useSEO from '../hooks/useSEO'
 
 export default function Sustainability() {
+  useSEO(
+    'Sustainability & Circular Battery Recycling',
+    'Naxen Exim India is committed to green energy. Learn about our advanced hydrometallurgical black mass processing, battery buyback, and zero-waste ESG targets.'
+  )
+
   const recyclingPhases = [
     {
       phase: 'Phase 1: Crushing & Black Mass Processing',

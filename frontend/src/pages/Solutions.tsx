@@ -1,8 +1,14 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { ArrowRight, Zap, Sun, Smartphone, Lightbulb, Battery, CheckCircle, Leaf, Globe } from 'lucide-react'
+import useSEO from '../hooks/useSEO'
 
 export default function Solutions() {
+  useSEO(
+    'Industrial & Custom Battery Solutions',
+    'Custom lithium battery solutions for electric vehicles, off-grid solar storage arrays, portable street lighting, and custom consumer electronics configurations.'
+  )
+
   const solutions = [
     {
       id: 'electric-vehicle',

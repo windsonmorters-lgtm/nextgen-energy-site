@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
+import useSEO from '../hooks/useSEO'
 import { 
   Search, ShoppingCart, Filter, Phone, Mail, Heart, Battery, Armchair, Car,
   Truck, Shield, RotateCcw, X, Plus, Minus, Trash2, CreditCard, 
@@ -209,6 +210,11 @@ interface CartItem {
 }
 
 export default function Products() {
+  useSEO(
+    'Our Battery Products & Power Catalog',
+    'Browse the full catalog of Naxen Exim India premium lithium-ion battery packs, e-rickshaw power units, solar deep-cycle batteries, and smart chargers.'
+  )
+
   const [selectedCategory, setSelectedCategory] = useState('all')
   const [cart, setCart] = useState<CartItem[]>([])
   const [wishlist, setWishlist] = useState<number[]>([])

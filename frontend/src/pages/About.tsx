@@ -1,8 +1,14 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { Target, Users, Award, Factory } from 'lucide-react'
+import useSEO from '../hooks/useSEO'
 
 export default function About() {
+  useSEO(
+    'About Us & Leadership',
+    'Learn about Naxen Exim India, our state-of-the-art battery manufacturing facilities, leadership team, certifications (ISO, AIS 156, BIS), and corporate history.'
+  )
+
   const leadership = [
     { name: 'Mr. Narottam Agarwal', title: 'Chairman & Managing Director', bio: '25+ years in energy storage and EV manufacturing' },
     { name: 'Mrs. Manya Agarwal', title: 'Chief Financial Officer', bio: 'Former Big-4 finance leader, NSE SME listing specialist' },
