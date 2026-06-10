@@ -1,10 +1,10 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Home from './pages/Home'
 import Products from './pages/Products'
 import Sustainability from './pages/Sustainability'
-import InvestorRelations from './pages/InvestorRelations'
+// import InvestorRelations from './pages/InvestorRelations'
 import About from './pages/About'
 import Blog from './pages/Blog'
 import Contact from './pages/Contact'
@@ -27,7 +27,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/products" element={<Products />} />
             <Route path="/sustainability" element={<Sustainability />} />
-            <Route path="/investor-relations" element={<InvestorRelations />} />
+            <Route path="/investor-relations" element={<Navigate to="/" replace />} />
             <Route path="/about" element={<About />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/solutions" element={<Solutions />} />

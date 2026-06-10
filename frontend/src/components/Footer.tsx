@@ -48,7 +48,6 @@ export default function Footer() {
             <h4 className="text-white font-semibold mb-4">Resources</h4>
             <ul className="space-y-2 text-sm">
               <li><Link to="/sustainability" className="hover:text-accent-cyan transition">Sustainability</Link></li>
-              <li><Link to="/investor-relations" className="hover:text-accent-cyan transition">Investor Relations</Link></li>
               <li><Link to="/blog" className="hover:text-accent-cyan transition">News & Blog</Link></li>
               <li><Link to="/contact" className="hover:text-accent-cyan transition">Partnerships</Link></li>
             </ul>
